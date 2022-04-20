@@ -5,16 +5,20 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { SoporteComponent } from './components/soporte/soporte.component';
+import { PerfilComponent } from './shared/perfil/perfil.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ClienteComponent,
-    SoporteComponent
+    SoporteComponent,
+    PerfilComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
