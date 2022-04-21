@@ -104,6 +104,12 @@
                             </a>
                         </li>
                         <li class="menu-item">
+                            <a [routerLink]="['/tickets']" class="menu-link">
+                                <i class="menu-icon tf-icons bx bx-note"></i>
+                                <div data-i18n="Analytics">Tickets</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
                             <a [routerLink]="['/servicios']" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-notepad"></i>
                                 <div data-i18n="Analytics">Servicios</div>
@@ -221,120 +227,120 @@
 
                         <h4 class="fw-bold py-3 mb-2">Proyectos</h4>
                     
-                    <div class="row ">
-                        <div class="button-wrapper mb-4">
-                            <label class="btn btn-outline-primary me-2 mb-4">
-                            <span class="d-none d-sm-block">Nuevo Proyecto</span>
-                            <i class="bx bx-upload d-block d-sm-none"></i>
-                            </label>
-                            <button type="button" class="btn btn-outline-danger account-image-reset mb-4">
-                            <i class="bx bx-reset d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Eliminar Proyecto</span>
-                            </button>
+                        <div class="row ">
+                            <div class="button-wrapper mb-4">
+                                <label class="btn btn-outline-primary me-2 mb-4">
+                                <span class="d-none d-sm-block">Nuevo Proyecto</span>
+                                <i class="bx bx-upload d-block d-sm-none"></i>
+                                </label>
+                                <button type="button" class="btn btn-outline-danger account-image-reset mb-4">
+                                <i class="bx bx-reset d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Eliminar Proyecto</span>
+                                </button>
 
-                            <!-- <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p> -->
-                        </div>
-    
-                        <div class="col-md-6">
-                            
-                            <div class="card mb-4">
-                                <h5 class="card-header">Proyecto 1</h5>
-                                <div class="card-body">
-                                <div class="demo-vertical-spacing demo-only-element">
-                                    <label >Solicitado</label>
-                                    <div class="progress">
-                                    <div
-                                        class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
-                                        role="progressbar"
-                                        style="width: 70%"
-                                        aria-valuenow="20"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                    </div>
-                                    <label for="">En Diseño</label>
-                                    <div class="progress">
-                                    <div
-                                        class="progress-bar progress-bar-striped progress-bar-animated bg-secondary"
-                                        role="progressbar"
-                                        style="width: 40%"
-                                        aria-valuenow="30"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                    </div>
-                                    <label for="">Aprobado</label>
-                                    <div class="progress">
-                                    <div
-                                        class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                        role="progressbar"
-                                        style="width: 60%"
-                                        aria-valuenow="40"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                    </div>
-                                    <label for="">En Desarrollo</label>
-                                    <div class="progress">
-                                    <div
-                                        class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                                        role="progressbar"
-                                        style="width: 55%"
-                                        aria-valuenow="75"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                    </div>
-                                    <label for="">En Pruebas</label>
-                                    <div class="progress">
-                                    <div
-                                        class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
-                                        role="progressbar"
-                                        style="width: 10%"
-                                        aria-valuenow="60"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                    </div>
-                                    <label for="">Realizando Ajustes</label>
-                                    <div class="progress">
-                                    <div
-                                        class="progress-bar progress-bar-striped progress-bar-animated bg-info"
-                                        role="progressbar"
-                                        style="width: 50%"
-                                        aria-valuenow="50"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                    </div>
-                                    <label for="">Finalizando Ajustes</label>
-                                    <div class="progress">
-                                    <div
-                                        class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
-                                        role="progressbar"
-                                        style="width: 90%"
-                                        aria-valuenow="85"
-                                        aria-valuemin="0"
-                                        aria-valuemax="100"
-                                    ></div>
-                                    </div>
-                                </div>
-                                </div>
+                                <!-- <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p> -->
                             </div>
-    
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="card">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Notas </h5>
+        
+                            <div class="col-md-6">
+                                
+                                <div class="card mb-4">
+                                    <h5 class="card-header">Proyecto 1</h5>
+                                    <div class="card-body">
+                                    <div class="demo-vertical-spacing demo-only-element">
+                                        <label >Solicitado</label>
+                                            <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                                                    role="progressbar"
+                                                    style="width: 70%"
+                                                    aria-valuenow="20"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                ></div>
+                                                </div>
+                                                <label for="">En Diseño</label>
+                                                <div class="progress">
+                                                <div
+                                                    class="progress-bar progress-bar-striped progress-bar-animated bg-secondary"
+                                                    role="progressbar"
+                                                    style="width: 40%"
+                                                    aria-valuenow="30"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                ></div>
+                                            </div>
+                                        <label for="">Aprobado</label>
+                                        <div class="progress">
+                                        <div
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                            role="progressbar"
+                                            style="width: 60%"
+                                            aria-valuenow="40"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                        ></div>
                                         </div>
-                                      </div>
-                   
-                          </div>
-    
-                    </div>
+                                        <label for="">En Desarrollo</label>
+                                        <div class="progress">
+                                        <div
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                            role="progressbar"
+                                            style="width: 55%"
+                                            aria-valuenow="75"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                        ></div>
+                                        </div>
+                                        <label for="">En Pruebas</label>
+                                        <div class="progress">
+                                        <div
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                                            role="progressbar"
+                                            style="width: 10%"
+                                            aria-valuenow="60"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                        ></div>
+                                        </div>
+                                        <label for="">Realizando Ajustes</label>
+                                        <div class="progress">
+                                        <div
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                                            role="progressbar"
+                                            style="width: 50%"
+                                            aria-valuenow="50"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                        ></div>
+                                        </div>
+                                        <label for="">Finalizando Ajustes</label>
+                                        <div class="progress">
+                                        <div
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                                            role="progressbar"
+                                            style="width: 90%"
+                                            aria-valuenow="85"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                        ></div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="card">
+                                            <div class="card-body">
+                                            <h5 class="card-title">Notas </h5>
+                                            </div>
+                                        </div>
+                    
+                            </div>
+        
+                        </div>
                 </div>
             </div>  
     
