@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<body>
+
+    <!-- Content -->
+
+    <div class="container-xxl">
+        <div class="authentication-wrapper authentication-basic container-p-y">
+            <div class="authentication-inner">
+                <!-- Register Card -->
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Logo -->
+                        <div class="app-brand justify-content-center">
+                            <img src="../../../assets/img/icons/brands/logo.png" alt="" style="max-width: 150px">
+                            <!-- <span class="app-brand-text demo text-body fw-bolder">STG</span> -->
+                        </div>
+                        <!-- /Logo -->
+                        <form id="formAuthentication" class="mb-3">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" autofocus />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu correo eletrónico" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tipo de Usuario</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Cliente</option>
+                                    <option value="">Desarrollo</option>
+                                    <option value="">Soporte</option>
+                                    <option value="">Servicios</option>
+                                    <option value="">Gerencia</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="password">Contraseña</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-password-toggle">
+                                <label class="form-label" for="password">Confirmar contraseña</label>
+                                <div class="input-group input-group-merge">
+                                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                                </div>
+                            </div>
+                            <a [routerLink]="['/home']" routerLinkActive="router-link-active">
+                                <button class="btn btn-primary d-grid w-100">Crear Usuario</button>
+                            </a>
+                        </form>
+
+                        <p class="text-center">
+                            <a [routerLink]="['/login']" routerLinkActive="router-link-active">
+                                <span><hr> Inicia Sesión</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Register Card -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

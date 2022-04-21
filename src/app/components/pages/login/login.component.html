@@ -44,7 +44,7 @@
                         <h4 class="mb-3">Bienvenido Usuario</h4>
 
 
-                        <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+                        <form id="formAuthentication" class="mb-3" action="index.html">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" class="form-control" id="email" name="email-username" placeholder="Ingresa tu correo electrónico" autofocus />
@@ -68,12 +68,14 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100" type="submit">Iniciar Sesión</button>
+                                <a [routerLink]="['/home']">
+                                    <button class="btn btn-primary d-grid w-100" type="submit">Iniciar Sesión</button>
+                                </a>
                             </div>
                         </form>
 
                         <p class="text-center">
-                            <a href="auth-register-basic.html">
+                            <a [routerLink]="['/register']" routerLinkActive="router-link-active">
                                 <span> <hr> Crear una cuenta</span>
                             </a>
                         </p>
