@@ -12,6 +12,7 @@ import { ProyectosComponent } from './components/pages/proyectos/proyectos.compo
 import { ServiciosComponent } from './components/pages/servicios/servicios.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { RegisterComponent } from './components/pages/register/register.component';
+import { ChatComponent } from './components/pages/chat/chat.component';
 
 
 
@@ -28,6 +29,7 @@ const app_routes: Routes = [
     { path: 'servicios', component: ServiciosComponent },
     { path: 'home', component: HomeComponent },
     { path: 'register', component: RegisterComponent },
+    { path: 'chat', component: ChatComponent },
     { path: '**', pathMatch: 'full', redirectTo: ''}
 
 ];

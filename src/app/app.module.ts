@@ -16,6 +16,8 @@ import { BugsComponent } from './components/pages/bugs/bugs.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { ChatComponent } from './components/pages/chat/chat.component';
+import { TicketsComponent } from './components/pages/tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     BugsComponent,
     MenuComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChatComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
