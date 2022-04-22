@@ -26,71 +26,130 @@
 
                 <div class="container-xxl flex-grow-1 container-p-y animated fadeIn fast">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card mb-4">
-                                <h5 class="card-header">Perfil</h5>
-                                <!-- Account -->
-                                <div class="card-body">
-                                    <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                        <img src="../assets/img/avatars/1.png" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
-                                        <div class="button-wrapper">
-                                            <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                            <span class="d-none d-sm-block">Subir nueva foto</span>
-                            <i class="bx bx-upload d-block d-sm-none"></i>
-                            <input
-                                type="file"
-                                id="upload"
-                                class="account-file-input"
-                                hidden
-                                accept="image/png, image/jpeg"
-                            />
-                            </label>
-                                            <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
-                            <i class="bx bx-reset d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Resetear</span>
-                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr class="my-0" />
-                                <div class="card-body">
-                                    <!-- <form id="formAccountSettings" method="POST" onsubmit="return false"> -->
-                                    <div class="row">
-                                        <div class="mb-3 col-md-6">
-                                            <label for="firstName" class="form-label">Nombre</label>
-                                            <input class="form-control" type="text" id="firstName" name="firstName" value="John" autofocus />
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label for="lastName" class="form-label">Apellido</label>
-                                            <input class="form-control" type="text" name="lastName" id="lastName" value="Doe" />
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label for="email" class="form-label">E-mail</label>
-                                            <input class="form-control" type="text" id="email" name="email" value="john.doe@example.com" placeholder="john.doe@example.com" />
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label for="organization" class="form-label">Tipo de usuario</label>
-                                            <input type="text" class="form-control" id="organization" name="organization" value="ThemeSelection" />
-                                        </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label class="form-label" for="phoneNumber">Numero de telefono</label>
-                                            <div class="input-group input-group-merge">
-                                                <span class="input-group-text">CL (+56)</span>
-                                                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="9 12345678" />
-                                            </div>
-                                        </div>
+                    <div class="col-xl-12">
+                        <div class="nav-align-top mb-4">
+                          <ul class="nav nav-tabs nav-fill" role="tablist">
+                            <li class="nav-item">
+                              <button
+                                type="button"
+                                class="nav-link active"
+                                role="tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#navs-justified-profil"
+                                aria-controls="navs-justified-profile"
+                                aria-selected="true"
+                              >
+                                <i class="tf-icons bx bx-user"></i> Perfil
+                              </button>
+                            </li>
+                            <li class="nav-item">
+                              <button
+                                type="button"
+                                class="nav-link"
+                                role="tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#navs-justified-skills"
+                                aria-controls="navs-justified-skills"
+                                aria-selected="false"
+                              >
+                                <i class="tf-icons bx bx-user"></i> Habilidades
+                              </button>
+                            </li>
+                            <li class="nav-item">
+                              <button
+                                type="button"
+                                class="nav-link"
+                                role="tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#navs-justified-exp"
+                                aria-controls="navs-justified-exp"
+                                aria-selected="false"
+                              >
+                                <i class="tf-icons bx bx-message-square"></i> Experiencia
+                              </button>
+                            </li>
+                          </ul>
+                          <div class="tab-content">
+                            <div class="tab-pane fade show active" id="navs-justified-profile" role="tabpanel">
 
+                                <div class="d-flex align-items-start align-items-sm-center gap-4 mb-3">
+                                    <img src="../assets/img/avatars/1.png" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+                                    <div class="button-wrapper">
+                                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Subir nueva foto</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input
+                                                type="file"
+                                                id="upload"
+                                                class="account-file-input"
+                                                hidden
+                                                accept="image/png, image/jpeg"
+                                            />
+                                        </label>
+                                        <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+                                            <i class="bx bx-reset d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">Resetear</span>
+                                        </button>
                                     </div>
-                                    <div class="mt-2">
-                                        <button type="submit" class="btn btn-primary me-2">Guardar cambios</button>
-                                        <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
-                                    </div>
-                                    <!-- </form> -->
                                 </div>
-                                <!-- /Account -->
+
+                                <div class="mb-3 col-md-12">
+                                    <label for="firstName" class="form-label">Nombre</label>
+                                    <input class="form-control" type="text" id="firstName" name="firstName" value="John" autofocus />
+                                </div>
+
+                                <div class="mb-3 col-md-12">
+                                    <label for="lastName" class="form-label">Apellido</label>
+                                    <input class="form-control" type="text" name="lastName" id="lastName" value="Doe" />
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label for="email" class="form-label">E-mail</label>
+                                    <input class="form-control" type="text" id="email" name="email" value="john.doe@example.com" placeholder="john.doe@example.com" />
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label for="organization" class="form-label">Tipo de usuario</label>
+                                    <input type="text" class="form-control" id="organization" name="organization" value="ThemeSelection" />
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label" for="phoneNumber">Numero de telefono</label>
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">CL (+56)</span>
+                                        <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="9 12345678" />
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <button type="submit" class="btn btn-primary me-2">Guardar cambios</button>
+                                    <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+                                </div>
+
+                              <p class="mb-0">
+                              
+                              </p>
                             </div>
+                            <div class="tab-pane fade" id="navs-justified-skills" role="tabpanel">
+
+                              
+
+                              <p class="mb-0">
+                                
+                              </p>
+                            </div>
+                            <div class="tab-pane fade" id="navs-justified-exp" role="tabpanel">
+
+                                <h1 class="tittle_gra">adadasdsd</h1>
+
+
+                              <p class="mb-0">
+                                
+                              </p>
+                            </div>
+    
+                          </div>
                         </div>
+                    </div>
+
+                    <div class="row">
+                        
                     </div>
                 </div>
                 <!-- / Content -->

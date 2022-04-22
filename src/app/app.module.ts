@@ -19,6 +19,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ChatComponent } from './components/pages/chat/chat.component';
 import { TicketsComponent } from './components/pages/tickets/tickets.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,7 @@ import { TicketsComponent } from './components/pages/tickets/tickets.component';
     RegisterComponent,
     NavbarComponent,
     ChatComponent,
-    TicketsComponent
+    TicketsComponent,
   ],
   imports: [
     BrowserModule,
