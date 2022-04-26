@@ -17,7 +17,12 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ChatComponent } from './components/pages/chat/chat.component';
-import { TicketsComponent } from './components/pages/tickets/tickets.component';
+import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.component';
+import { MenuSoporteComponent } from './shared/menu-soporte/menu-soporte.component';
+import { MenuConsultoriaComponent } from './shared/menu-consultoria/menu-consultoria.component';
+import { MenuGerneciaComponent } from './shared/menu-gernecia/menu-gernecia.component';
+import { MenuComercialComponent } from './shared/menu-comercial/menu-comercial.component';
+
 
 
 
@@ -38,7 +43,12 @@ import { TicketsComponent } from './components/pages/tickets/tickets.component';
     RegisterComponent,
     NavbarComponent,
     ChatComponent,
-    TicketsComponent,
+    MenuClienteComponent,
+    MenuSoporteComponent,
+    MenuConsultoriaComponent,
+    MenuGerneciaComponent,
+    MenuComercialComponent,
+
   ],
   imports: [
     BrowserModule,
