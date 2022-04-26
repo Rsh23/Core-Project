@@ -19,6 +19,10 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ChatComponent } from './components/pages/chat/chat.component';
 import { VentasComponent } from './components/pages/ventas/ventas.component';
+import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.component';
+import { MenuSoporteComponent } from './shared/menu-soporte/menu-soporte.component';
+import { MenuClienteKComponent } from './shared/menu-cliente-k/menu-cliente-k.component';
+
 
 
 
@@ -38,6 +42,9 @@ import { VentasComponent } from './components/pages/ventas/ventas.component';
     NavbarComponent,
     ChatComponent,
     VentasComponent,
+    MenuClienteComponent,
+    MenuSoporteComponent,
+    MenuClienteKComponent,
 
   ],
   imports: [
