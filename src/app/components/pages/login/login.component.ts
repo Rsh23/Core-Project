@@ -14,13 +14,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.dataSvc.getAll().subscribe( res => {
-    //   console.log('res', res);
-    // })
 
-    fetch('https://coredevelopmentprojects.com/backend/public/login')
-    .then(response => response.json())
-    .then(data => console.log(data));
+    var data = { correo:"cliente@cliente.com",clave:"cliente@cliente.com"};
+    fetch('https://coredevelopmentprojects.com/backend/public/login', {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
 
   }
 
