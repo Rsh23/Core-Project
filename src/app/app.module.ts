@@ -21,7 +21,8 @@ import { ChatComponent } from './components/pages/chat/chat.component';
 import { VentasComponent } from './components/pages/ventas/ventas.component';
 import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.component';
 import { MenuSoporteComponent } from './shared/menu-soporte/menu-soporte.component';
-import { MenuClienteKComponent } from './shared/menu-cliente-k/menu-cliente-k.component';
+import { MenuClienteSComponent } from './shared/menu-clienteS/menu-clienteS.component';
+import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.component';
 
 
 
@@ -44,7 +45,8 @@ import { MenuClienteKComponent } from './shared/menu-cliente-k/menu-cliente-k.co
     VentasComponent,
     MenuClienteComponent,
     MenuSoporteComponent,
-    MenuClienteKComponent,
+    MenuClienteSComponent,
+    SoporteCSComponent,
 
   ],
   imports: [

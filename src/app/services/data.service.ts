@@ -20,6 +20,12 @@ export class DataService {
       return this.http.post<ResponseI>(direccion, form);
    }
 
+  IsLoggedIn(){
+
+    return localStorage.getItem("estado") != null;
+    
+  }
+
    
   
 }

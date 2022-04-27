@@ -8,6 +8,7 @@ import { ResponseI } from '../../../modelos/response.interface';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   errorStatus: boolean = false;
   errorMsg: any = "";
+  mostrarM : boolean = false;
 
   ngOnInit(): void {
    
@@ -34,8 +36,9 @@ export class LoginComponent implements OnInit {
   onLogin(form: LoginI){
       this.dataSvc.loginByEmail(form).subscribe( data => {
         let dataResponse: ResponseI = data;
-        console.log(data);
         if(dataResponse.error == false){
+          console.log(data);
+          localStorage.setItem("rol", dataResponse.rol);
           this.router.navigate(['home'])
         }
         else{
@@ -44,6 +47,8 @@ export class LoginComponent implements OnInit {
         }
       });
   }
+
+
 
   
 

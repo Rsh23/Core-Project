@@ -1,7 +1,7 @@
 export interface ResponseI{
     error: boolean;
     correo: string;
-    rol: number;
+    rol: any;
     estado: number;
     message: string;
 
