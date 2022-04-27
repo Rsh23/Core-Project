@@ -23,6 +23,7 @@ import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.compone
 import { MenuSoporteComponent } from './shared/menu-soporte/menu-soporte.component';
 import { MenuClienteSComponent } from './shared/menu-clienteS/menu-clienteS.component';
 import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.component';
+import { DataService } from './services/data.service';
 
 
 
@@ -56,7 +57,7 @@ import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.com
     ReactiveFormsModule, 
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

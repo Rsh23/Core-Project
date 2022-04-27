@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate() {
-    if (this.service.IsLoggedIn()) {
+    if (localStorage.getItem('rol') != null) {
       return true;  
     }
     else{

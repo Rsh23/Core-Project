@@ -19,19 +19,64 @@ import { AuthGuard } from './shared/auth.guard';
 
 
 const app_routes: Routes = [
-    { path: '', component: LoginComponent },
-    { path: 'perfil', component: PerfilComponent },
-    { path: 'soporte', component: SoporteComponent },
-    { path: 'bugs', component: BugsComponent },
-    { path: 'notificaciones', component: NotificacionesComponent },
-    { path: 'consultoria', component: ConsultoriaComponent },
-    { path: 'home', component: HomeComponent, /*canActivate: [AuthGuard]*/ },
-    { path: 'register', component: RegisterComponent },
-    { path: 'chat', component: ChatComponent },
-    { path: 'ventas', component: VentasComponent },
-    { path: 'soporte-cs', component: SoporteCSComponent },
-    // { canActivate: [AuthGuard] },
-    { path: '**', pathMatch: 'full', redirectTo: ''},
+    { 
+      path: '', 
+      component: LoginComponent 
+    },
+    { 
+      path: 'perfil', 
+      component: PerfilComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'soporte', 
+      component: SoporteComponent,
+      canActivate: [AuthGuard]  
+    },
+    { 
+      path: 'bugs', 
+      component: BugsComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'notificaciones',
+      component: NotificacionesComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'consultoria',
+      component: ConsultoriaComponent,
+      canActivate: [AuthGuard]  
+    },
+    { 
+      path: 'home', 
+      component: HomeComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'register',
+      component: RegisterComponent 
+    },
+    { 
+      path: 'chat', 
+      component: ChatComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'ventas', 
+      component: VentasComponent,
+      canActivate: [AuthGuard] 
+    },
+    { 
+      path: 'soporte-cs', 
+      component: SoporteCSComponent ,
+      canActivate: [AuthGuard]
+    },
+    { 
+      path: '**', 
+      pathMatch: 'full', 
+      redirectTo: ''
+    },
     
     
 
