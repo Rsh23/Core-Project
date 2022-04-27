@@ -1,0 +1,8 @@
+{
+    "/backend/*":
+    {
+        "target": "https://coredevelopmentprojects.com/",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

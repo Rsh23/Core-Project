@@ -44,10 +44,10 @@
                         <h4 class="mb-3">Bienvenido Usuario</h4>
 
 
-                        <form id="formAuthentication" class="mb-3" action="index.html">
+                        <form [formGroup]="loginFrom" (ngSubmit)="onLogin(loginFrom.value)" class="mb-3" >
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email-username" placeholder="Ingresa tu correo electrónico" autofocus />
+                                <input type="text" class="form-control" id="login" formControlName="correo" placeholder="Ingresa tu correo electrónico" autofocus />
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <div class="d-flex justify-content-between">
@@ -57,7 +57,7 @@
                                     </a>
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                    <input type="password" id="password" class="form-control" formControlName="clave"  placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
@@ -68,9 +68,9 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <a [routerLink]="['/home']">
-                                    <button class="btn btn-primary d-grid w-100" type="submit">Iniciar Sesión</button>
-                                </a>
+                                
+                                    <input class="btn btn-primary d-grid w-100" type="submit" value="Iniciar Sesión">
+                                
                             </div>
                         </form>
 
@@ -79,6 +79,8 @@
                                 <span> <hr> Crear una cuenta</span>
                             </a>
                         </p>
+
+                        <div class="alert alert-danger text-center fadeIn fast" *ngIf="errorStatus"> {{errorMsg}} </div>
                     </div>
                 </div>
             </div>

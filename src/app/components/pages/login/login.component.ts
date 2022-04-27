@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './../../../data.service';
+import { DataService } from '../../../services/data.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LoginI } from '../../../modelos/login.interface';
+import { Router } from '@angular/router';
+import { ResponseI } from '../../../modelos/response.interface';
+
+
 
 
 @Component({
@@ -10,21 +16,33 @@ import { DataService } from './../../../data.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private dataSvc: DataService ) { }
+  loginFrom = new FormGroup({
+      correo : new FormControl('', Validators.required),
+      clave : new FormControl('', Validators.required)
+  });
+
+  constructor( private dataSvc: DataService, private router: Router ) { }
+
+  errorStatus: boolean = false;
+  errorMsg: any = "";
 
   ngOnInit(): void {
+   
 
+  }
 
-    var data = { correo:"cliente@cliente.com",clave:"cliente@cliente.com"};
-    fetch('https://coredevelopmentprojects.com/backend/public/login', {
-      method: 'post',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      }
-    })
-
+  onLogin(form: LoginI){
+      this.dataSvc.loginByEmail(form).subscribe( data => {
+        let dataResponse: ResponseI = data;
+        console.log(data);
+        if(dataResponse.error == false){
+          this.router.navigate(['home'])
+        }
+        else{
+          this.errorStatus = true;
+          this.errorMsg = dataResponse.message;
+        }
+      });
   }
 
   
