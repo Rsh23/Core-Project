@@ -13,7 +13,8 @@ import { VentasComponent } from './components/pages/ventas/ventas.component';
 import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { RolGuard } from './core/guards/rol.guard'
-
+import { TicketsComponent } from './components/pages/tickets/tickets.component';
+import { SolicitudIComponent } from './components/pages/solicitud-i/solicitud-i.component';
 
 
 
@@ -74,6 +75,16 @@ const app_routes: Routes = [
     { 
       path: 'soporte-cs', 
       component: SoporteCSComponent ,
+      canActivate: [AuthGuard]
+    },
+    {
+      path: 'tickets',
+      component: TicketsComponent,
+      canActivate: [AuthGuard]
+    },
+    {
+      path: 'solicitud-i',
+      component: SolicitudIComponent,
       canActivate: [AuthGuard]
     },
     { 

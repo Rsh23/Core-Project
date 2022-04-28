@@ -27,7 +27,7 @@ export class DataService {
     return localStorage.getItem('rol'); 
   }
 
-  // hasAccesToModule(){}
+
 
    loginByEmail(form: LoginI): Observable<ResponseI>{
      let direccion = this.url;

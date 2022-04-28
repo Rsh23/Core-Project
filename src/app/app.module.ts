@@ -24,6 +24,8 @@ import { MenuSoporteComponent } from './shared/menu-soporte/menu-soporte.compone
 import { MenuClienteSComponent } from './shared/menu-clienteS/menu-clienteS.component';
 import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.component';
 import { DataService } from './services/data.service';
+import { TicketsComponent } from './components/pages/tickets/tickets.component';
+import { SolicitudIComponent } from './components/pages/solicitud-i/solicitud-i.component';
 
 
 
@@ -48,6 +50,8 @@ import { DataService } from './services/data.service';
     MenuSoporteComponent,
     MenuClienteSComponent,
     SoporteCSComponent,
+    TicketsComponent,
+    SolicitudIComponent,
 
   ],
   imports: [
