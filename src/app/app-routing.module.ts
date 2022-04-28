@@ -11,7 +11,8 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { ChatComponent } from './components/pages/chat/chat.component';
 import { VentasComponent } from './components/pages/ventas/ventas.component';
 import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.component';
-import { AuthGuard } from './shared/auth.guard';
+import { AuthGuard } from './core/guards/auth.guard';
+import { RolGuard } from './core/guards/rol.guard'
 
 
 
@@ -26,7 +27,10 @@ const app_routes: Routes = [
     { 
       path: 'perfil', 
       component: PerfilComponent,
-      canActivate: [AuthGuard] 
+      canActivate: [AuthGuard],
+      // data: {
+      //   role: '1'
+      // }
     },
     { 
       path: 'soporte', 

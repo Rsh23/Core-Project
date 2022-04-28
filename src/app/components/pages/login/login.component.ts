@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         if(dataResponse.error == false){
           console.log(data);
           localStorage.setItem("rol", dataResponse.rol);
-          this.router.navigate(['home'])
+          this.router.navigate(['/home'])
         }
         else{
           this.errorStatus = true;
