@@ -15,17 +15,17 @@ export class RolGuard implements CanActivate {
 
   }
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.isAuthorized(route);
+  canActivate(){
+    if( this.userService.haveAccess() ){
+      return true;
+    }
+    
+    else{
+      this.router.navigate(['/home'])
+      return false;
+    }
   }
 
-  isAuthorized( route: ActivatedRouteSnapshot ): boolean{
-    const {scopes = []} = this.getUser.getCurrentUser();
-    console.log(this.getUser.getCurrentUser());
-    return true;
-
-  }
+  
   
 }

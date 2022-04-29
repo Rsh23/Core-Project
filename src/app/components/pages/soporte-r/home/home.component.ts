@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginI } from '../../../modelos/login.interface';
-import { ResponseI } from '../../../modelos/response.interface';
-import { DataService } from '../../../services/data.service';
+import { LoginI } from '../../../../modelos/login.interface';
+import { ResponseI } from '../../../../modelos/response.interface';
+import { DataService } from '../../../../services/data.service';
 
 
 @Component({
@@ -43,25 +43,25 @@ export class HomeComponent implements OnInit {
 
   checkLocalStorage(){
 
-    if ( localStorage.getItem('rol') == "1" ) {
+    if ( sessionStorage.getItem('rol') == "1" ) {
       this.menuCliente = true;
     }
-    else if ( localStorage.getItem('rol') == "2"){
+    else if ( sessionStorage.getItem('rol') == "2"){
       this.menuClienteS = true;
     }
-    else if ( localStorage.getItem('rol') == "3"){
+    else if ( sessionStorage.getItem('rol') == "3"){
       this.menuSup = true;
     }
-    else if ( localStorage.getItem('rol') == "4"){
+    else if ( sessionStorage.getItem('rol') == "4"){
       this.menuLiderS = true;
     }
-    else if ( localStorage.getItem('rol') == "5"){
+    else if ( sessionStorage.getItem('rol') == "5"){
       this.menuConsult = true;
     }
-    else if ( localStorage.getItem('rol') == "6"){
+    else if ( sessionStorage.getItem('rol') == "6"){
       this.menuLiderC = true;
     }
-    else if ( localStorage.getItem('rol') == "7"){
+    else if ( sessionStorage.getItem('rol') == "7"){
       this.menuGerencia = true;
     }
     else{

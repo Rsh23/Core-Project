@@ -71,6 +71,46 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+    <script>
+
+        $("#divchatchat").hide();
+        $("#divchatpersonas").hide();
+        $("#divchatgrupos").show();
+  
+  
+        function ocultarChatGrupos(){
+  
+            $("#divchatchat").hide();
+            $("#divchatpersonas").hide();
+            $("#divchatgrupos").show();
+  
+        }
+  
+        function mostrarchatchat(numchat){
+  
+        $("#divchatchat").show();
+  
+  
+        }
+  
+        function mostrarChatPersonas(numchat){
+  
+            if(numchat == 1){
+                $("#divchatchat").hide();
+                $("#divchatpersonas").show();
+                $("#divchatgrupos").hide();
+        
+            }else{
+  
+                alert("error");
+  
+            }
+  
+  
+        }
+  
+      </script>
+
 </body>
 
 </html>

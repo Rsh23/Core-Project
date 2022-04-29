@@ -101,19 +101,37 @@
                             <div data-i18n="Analytics">Inicio</div>
                         </a>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item" *ngIf="showOption3()">
+                      <a [routerLink]="['/tickets']" class="menu-link">
+                          <i class="menu-icon tf-icons bx bx-receipt"></i>
+                          <div data-i18n="Analytics">Tickets</div>
+                      </a>
+                    </li>
+                    <li class="menu-item" *ngIf="showOption3()">
+                      <a [routerLink]="['/escalamiento']" class="menu-link">
+                          <i class="menu-icon tf-icons bx bx-line-chart"></i>
+                          <div data-i18n="Analytics">Escalamiento</div>
+                      </a>
+                    </li>
+                    <li class="menu-item" *ngIf="showOption3()">
+                      <a [routerLink]="['/solicitud-i']" class="menu-link">
+                          <i class="menu-icon tf-icons bx bx-edit-alt"></i>
+                          <div data-i18n="Analytics">Solicitud interna</div>
+                      </a>
+                    </li>  
+                    <li class="menu-item" *ngIf="showOption1()">
                         <a [routerLink]="['/ventas']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-spreadsheet"></i>
                             <div data-i18n="Analytics">Ventas</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a [routerLink]="['/soporte']" class="menu-link">
+                        <a [routerLink]="['/soporte']" class="menu-link" *ngIf="showOption1()">
                             <i class="menu-icon tf-icons bx bx-support"></i>
                             <div data-i18n="Analytics">Soporte</div>
                         </a>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item" *ngIf="showOption1()">
                         <a [routerLink]="['/consultoria']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-notepad"></i>
                             <div data-i18n="Analytics">Consultoria</div>

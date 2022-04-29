@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="layout-wrapper layout-content-navbar">
+
+        <div class="layout-container">
+
+            <app-menu></app-menu>
+
+            <div class="content-wrapper">
+
+                <app-navbar></app-navbar>
+
+                <div class="container-xxl flex-grow-1 container-p-y animated fadeIn fast">
+                
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="row">
+                        
+                        <div class="col-md-4 col-12" id="divchatgrupos">
+                          <div class="card">
+                            <h5 class="card-header">Grupos  </h5>
+                            <div class="card-body">
+                                <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="basic-addon-search31">
+                              <!-- Social Accounts -->
+                              <br>
+                              <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                  <img
+                                    src="../assets/img/icons/brands/facebook.png"
+                                    alt="facebook"
+                                    class="me-3"
+                                    height="30"
+                                  />
+                                </div>
+                                <div class="flex-grow-1 row">
+                                  <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                    <h6 class="mb-0">Consultoria <span class="badge bg-label-warning me-1">(14)</span></h6>
+                                    <small class="text-muted">Grupo Interno</small>
+                                  </div>
+                                  <div class="col-4 col-sm-5 text-end">
+                                    <button type="button" class="btn btn-icon btn-outline-primary" onClick="mostrarChatPersonas(1)">
+                                      Ver
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                  <img
+                                    src="../assets/img/icons/brands/twitter.png"
+                                    alt="twitter"
+                                    class="me-3"
+                                    height="30"
+                                  />
+                                </div>
+                                <div class="flex-grow-1 row">
+                                  <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                    <h6 class="mb-0">Soporte</h6>
+                                    <small class="text-muted">Grupo Interno</small>
+                                  </div>
+                                  <div class="col-4 col-sm-5 text-end">
+                                    <button type="button" class="btn btn-icon btn-outline-primary">
+                                        Ver
+                                      </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                  <img
+                                    src="../assets/img/icons/brands/instagram.png"
+                                    alt="instagram"
+                                    class="me-3"
+                                    height="30"
+                                  />
+                                </div>
+                                <div class="flex-grow-1 row">
+                                  <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                    <h6 class="mb-0">CCU</h6>
+                                    <small class="text-muted">Grupo Externo</small>
+                                  </div>
+                                  <div class="col-4 col-sm-5 text-end">
+                                    <button type="button" class="btn btn-icon btn-outline-primary">
+                                        Ver
+                                      </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                  <img
+                                    src="../assets/img/icons/brands/dribbble.png"
+                                    alt="dribbble"
+                                    class="me-3"
+                                    height="30"
+                                  />
+                                </div>
+                                <div class="flex-grow-1 row">
+                                  <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                    <h6 class="mb-0">GAMA <span class="badge bg-label-warning me-1">(999)</span></h6>
+                                    <small class="text-muted">Grupo Externo</small>
+                                  </div>
+                                  <div class="col-4 col-sm-5 text-end">
+                                    <button type="button" class="btn btn-icon btn-outline-primary">
+                                        Ver
+                                      </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                  <img
+                                    src="../assets/img/icons/brands/behance.png"
+                                    alt="behance"
+                                    class="me-3"
+                                    height="30"
+                                  />
+                                </div>
+                                <div class="flex-grow-1 row">
+                                  <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                    <h6 class="mb-0">Dudas TEK</h6>
+                                    <small class="text-muted">Grupo Interno</small>
+                                  </div>
+                                  <div class="col-4 col-sm-5 text-end">
+                                    <button type="button" class="btn btn-icon btn-outline-primary">
+                                        Ver
+                                      </button>
+                                  </div>
+                                </div>
+                               
+                              </div>
+                            <br>
+                              <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                  <img
+                                    src="../assets/img/icons/brands/behance.png"
+                                    alt="behance"
+                                    class="me-3"
+                                    height="30"
+                                  />
+                                </div>
+                                <div class="flex-grow-1 row">
+                                  <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                    <h6 class="mb-0">Dudas WMS</h6>
+                                    <small class="text-muted">Grupo Interno</small>
+                                  </div>
+                                  <div class="col-4 col-sm-5 text-end">
+                                    <button type="button" class="btn btn-icon btn-outline-primary">
+                                        Ver
+                                      </button>
+                                  </div>
+                                </div>
+                               
+                              </div>
+                              <!-- /Social Accounts -->
+                            </div>
+                          </div>
+                        </div>
+    
+    
+                        <div class="col-md-4 col-12" id="divchatpersonas">
+                            <div class="card">
+                              <h5 class="card-header"><button type="button" class="btn rounded-pill btn-primary" onClick="ocultarChatGrupos()">Ver Grupos</button>Participantes  </h5>
+                              <div class="card-body">
+                                  <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="basic-addon-search31">
+                                <!-- Social Accounts -->
+                                <br>
+                                <div class="d-flex mb-3">
+                                  <div class="flex-shrink-0">
+                                    <img
+                                      src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-2.jpg"
+                                     
+                                      class="me-3"
+                                      height="30"
+                                    />
+                                  </div>
+                                  <div class="flex-grow-1 row">
+                                    <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                      <h6 class="mb-0">Chat Grupal <span class="badge bg-label-warning me-1">(14)</span></h6>
+                                      <small class="text-muted">Grupo Interno</small>
+                                    </div>
+                                    <div class="col-4 col-sm-5 text-end">
+                                      <button type="button" class="btn btn-icon btn-outline-primary" onClick="mostrarchatchat(1)">
+                                        Chat
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                  <div class="flex-shrink-0">
+                                    <img
+                                      src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-2.jpg"
+                                   
+                                      class="me-3"
+                                      height="30"
+                                    />
+                                  </div>
+                                  <div class="flex-grow-1 row">
+                                    <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                      <h6 class="mb-0">Consultor 1</h6>
+                                      <small class="text-muted">Grupo Interno</small>
+                                    </div>
+                                    <div class="col-4 col-sm-5 text-end">
+                                      <button type="button" class="btn btn-icon btn-outline-primary">
+                                          Chat
+                                        </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                  <div class="flex-shrink-0">
+                                    <img
+                                      src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-2.jpg"
+                                     
+                                      class="me-3"
+                                      height="30"
+                                    />
+                                  </div>
+                                  <div class="flex-grow-1 row">
+                                    <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                      <h6 class="mb-0">Consultor 2</h6>
+                                      <small class="text-muted">Grupo Externo</small>
+                                    </div>
+                                    <div class="col-4 col-sm-5 text-end">
+                                      <button type="button" class="btn btn-icon btn-outline-primary">
+                                          Chat
+                                        </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                  <div class="flex-shrink-0">
+                                    <img
+                                      src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-2.jpg"
+                                     
+                                      class="me-3"
+                                      height="30"
+                                    />
+                                  </div>
+                                  <div class="flex-grow-1 row">
+                                    <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                      <h6 class="mb-0">Consultor 3 <span class="badge bg-label-warning me-1">(999)</span></h6>
+                                      <small class="text-muted">Grupo Externo</small>
+                                    </div>
+                                    <div class="col-4 col-sm-5 text-end">
+                                      <button type="button" class="btn btn-icon btn-outline-primary">
+                                          Chat
+                                        </button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="flex-shrink-0">
+                                    <img
+                                      src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-2.jpg"
+                                   
+                                      class="me-3"
+                                      height="30"
+                                    />
+                                  </div>
+                                  <div class="flex-grow-1 row">
+                                    <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                      <h6 class="mb-0">Consultor 4</h6>
+                                      <small class="text-muted">Grupo Interno</small>
+                                    </div>
+                                    <div class="col-4 col-sm-5 text-end">
+                                      <button type="button" class="btn btn-icon btn-outline-primary">
+                                          Chat
+                                        </button>
+                                    </div>
+                                  </div>
+                                 
+                                </div>
+                              <br>
+                                <div class="d-flex">
+                                  <div class="flex-shrink-0">
+                                    <img
+                                      src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-2.jpg"
+                                   
+                                      class="me-3"
+                                      height="30"
+                                    />
+                                  </div>
+                                  <div class="flex-grow-1 row">
+                                    <div class="col-8 col-sm-7 mb-sm-0 mb-2">
+                                      <h6 class="mb-0">Cesar Alejandro Romero Romero</h6>
+                                      <small class="text-muted">Grupo Interno</small>
+                                    </div>
+                                    <div class="col-4 col-sm-5 text-end">
+                                      <button type="button" class="btn btn-icon btn-outline-primary">
+                                          Chat
+                                        </button>
+                                    </div>
+                                  </div>
+                                 
+                                </div>
+                                <!-- /Social Accounts -->
+                              </div>
+                            </div>
+                          </div>
+    
+    
+                          <div class="col-md-8 col-12" id="divchatchat">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Chat</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                  <div class="input-group">
+                                
+                                    <textarea class="form-control" rows="12" aria-label="With textarea" placeholder="Comment"></textarea>
+                                
+                                </div>
+            
+                                 
+            
+                                <div class="mb-3">
+                                  <label for="exampleDataList" class="form-label">Agregar caso</label>
+                                  <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="buscar casos...">
+                                  <datalist id="datalistOptions">
+                                    <option value="caso 1"></option>
+                                    <option value="tiket 001"></option>
+                                    <option value="tiket 002"></option>
+                                    <option value="tiket 003"></option>
+                                    <option value="tiket 004"></option>
+                                  </datalist>
+                                </div>
+                             
+                                  <div class="input-group ">
+                                    <input type="file" class="form-control" id="inputGroupFile02">
+                                    <label class="input-group-text" for="inputGroupFile02">Imagen</label>
+                                  </div>
+                                  <div class="input-group">
+                                    <input type="file" class="form-control" id="inputGroupFile02">
+                                    <label class="input-group-text" for="inputGroupFile02">Archivo</label>
+                                  </div>
+                                  <div class="input-group">
+                                    <span class="input-group-text">Mensaje</span>
+                                    <textarea class="form-control" aria-label="Mensaje" placeholder="Mensaje"></textarea>
+                                  </div>
+                                  <button type="button" class="btn btn-lg btn-primary" style="margin-right: 5px;">Enviar</button>                               
+                                  <button type="button" class="btn btn-lg btn-danger">Cancelar</button>
+                                </div>
+                              </div>
+                          </div>
+    
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
