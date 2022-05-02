@@ -20,6 +20,12 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ChatComponent } from './components/pages/chat/chat.component';
 import { VentasComponent } from './components/pages/ventas/ventas.component';
 import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.component';
+import { MenuSoporteComponent } from './shared/menu-soporte/menu-soporte.component';
+import { MenuClienteSComponent } from './shared/menu-clienteS/menu-clienteS.component';
+import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.component';
+import { DataService } from './services/data.service';
+import { TicketsComponent } from './components/pages/tickets/tickets.component';
+import { SolicitudIComponent } from './components/pages/solicitud-i/solicitud-i.component';
 
 
 
@@ -41,6 +47,11 @@ import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.compone
     ChatComponent,
     VentasComponent,
     MenuClienteComponent,
+    MenuSoporteComponent,
+    MenuClienteSComponent,
+    SoporteCSComponent,
+    TicketsComponent,
+    SolicitudIComponent,
 
   ],
   imports: [
@@ -50,7 +61,7 @@ import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.compone
     ReactiveFormsModule, 
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
