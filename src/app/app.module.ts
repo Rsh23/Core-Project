@@ -19,6 +19,8 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ChatComponent } from './components/pages/chat/chat.component';
 import { VentasComponent } from './components/pages/ventas/ventas.component';
+import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.component';
+
 
 
 
@@ -38,6 +40,7 @@ import { VentasComponent } from './components/pages/ventas/ventas.component';
     NavbarComponent,
     ChatComponent,
     VentasComponent,
+    MenuClienteComponent,
 
   ],
   imports: [

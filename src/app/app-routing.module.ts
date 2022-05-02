@@ -11,6 +11,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { ChatComponent } from './components/pages/chat/chat.component';
 import { VentasComponent } from './components/pages/ventas/ventas.component';
+import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.component';
+
 
 
 
@@ -28,6 +30,7 @@ const app_routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'chat', component: ChatComponent },
     { path: 'ventas', component: VentasComponent },
+    { path: 'menu-cliente', component: MenuClienteComponent },
     { path: '**', pathMatch: 'full', redirectTo: ''}
 
 ];
