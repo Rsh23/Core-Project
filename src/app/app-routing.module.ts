@@ -17,6 +17,7 @@ import { SolicitudIComponent } from './components/pages/soporte-r/solicitud-i/so
 import { EscalamientoComponent } from './components/pages/soporte-r/escalamiento/escalamiento.component';
 import { RolGuard2 } from './core/guards/rol/rol2.guard';
 import { RolGuard3 } from './core/guards/rol/rol3.guard';
+import { CheckLoginGuard } from './core/guards/check-login.guard';
 
 
 
@@ -25,9 +26,14 @@ import { RolGuard3 } from './core/guards/rol/rol3.guard';
 
 const app_routes: Routes = [
     { 
+      path: 'login', 
+      component: LoginComponent,
+      canActivate: [CheckLoginGuard]
+    },
+    { 
       path: '', 
-      component: LoginComponent 
-    },    
+      component: HomeComponent 
+    },      
     { 
       
       path: 'perfil', 
@@ -81,7 +87,6 @@ const app_routes: Routes = [
     { 
       path: 'register',
       component: RegisterComponent,
-      canActivate: [AuthGuard]
     },
     { 
       path: 'chat', 

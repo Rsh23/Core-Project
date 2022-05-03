@@ -42,6 +42,10 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("rol", dataResponse.rol);
           this.router.navigate(['home'])
         }
+        else{
+          this.errorStatus = true;
+          this.errorMsg = dataResponse.message;
+        }
       });
   }
 

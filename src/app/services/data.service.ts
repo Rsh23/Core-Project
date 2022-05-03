@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginI } from '../modelos/login.interface';
 import { ResponseI } from '../modelos/response.interface';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, catchError } from 'rxjs';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 
 
@@ -29,9 +30,9 @@ export class DataService {
 
 
 
-  loginByEmail(form: LoginI): Observable<ResponseI>{  // Este es el metodo para loguearse
+  loginByEmail(form: LoginI): Observable<ResponseI >{  // Este es el metodo para loguearse
      let direccion = this.url;
-      return this.http.post<ResponseI>(direccion, form);
+      return this.http.post<ResponseI>(direccion, form)
   }
 
   getRol(){
@@ -97,6 +98,8 @@ export class DataService {
       return false;
     }
   }
+
+  logOut(): void{}
    
   
 }
