@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,41 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() {
-    this.showOption1();
-    this.showOption2();
-    this.showOption3();
+  rol1: boolean = false;
+  rol2: boolean = false;
+  rol3: boolean = false;
+
+  constructor( private service: DataService ) {
+    this.showOption();
    }
 
+  showOption() {
+    if ( this.service.showOption() ) {
+      return this.rol1 = true;
+    }
+    else if ( this.service.showOption2() ) {
+      return this.rol2 = true;
+    }
+    else if ( this.service.showOption3() ) {
+      return this.rol3 = true;
+    } 
+    else{
+      return false;
+    }
+  }
    
   ngOnInit(): void {
   }
 
-  showOption1(){
-    if( localStorage.getItem('rol') == '1' ){
-      return true;
-    
-    }
-    else{
-      return false;
-    }  
-  }
-  showOption2(){
-    if( localStorage.getItem('rol') == '2'){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-  showOption3(){
-    if( localStorage.getItem('rol') == '3'){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
+  
 
   
 }

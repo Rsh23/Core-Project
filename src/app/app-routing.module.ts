@@ -11,10 +11,13 @@ import { ChatComponent } from './components/pages/general/chat/chat.component';
 import { VentasComponent } from './components/pages/cliente/ventas/ventas.component';
 import { SoporteCSComponent } from './components/pages/cliente/soporte-cs/soporte-cs.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { RolGuard } from './core/guards/rol.guard'
+import { RolGuard } from './core/guards/rol/rol.guard'
 import { TicketsComponent } from './components/pages/soporte-r/tickets/tickets.component';
 import { SolicitudIComponent } from './components/pages/soporte-r/solicitud-i/solicitud-i.component';
 import { EscalamientoComponent } from './components/pages/soporte-r/escalamiento/escalamiento.component';
+import { RolGuard2 } from './core/guards/rol/rol2.guard';
+import { RolGuard3 } from './core/guards/rol/rol3.guard';
+
 
 
 
@@ -68,12 +71,12 @@ const app_routes: Routes = [
     {
       path: 'tickets',
       component: TicketsComponent,
-      canActivate: [AuthGuard, RolGuard]
+      canActivate: [AuthGuard, RolGuard3]
     },
     {
       path: 'solicitud-i',
       component: SolicitudIComponent,
-      canActivate: [AuthGuard, RolGuard]
+      canActivate: [AuthGuard, RolGuard3]
     },
     { 
       path: 'register',
@@ -88,7 +91,7 @@ const app_routes: Routes = [
     {
       path: 'escalamiento',
       component: EscalamientoComponent,
-      canActivate: [AuthGuard, RolGuard]
+      canActivate: [AuthGuard, RolGuard3]
     },
     { 
       path: '**', 
