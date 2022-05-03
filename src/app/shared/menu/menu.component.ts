@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
   }
 
   showOption1(){
-    if( sessionStorage.getItem('rol') == '1' ){
+    if( localStorage.getItem('rol') == '1' ){
       return true;
     
     }
@@ -27,7 +27,7 @@ export class MenuComponent implements OnInit {
     }  
   }
   showOption2(){
-    if( sessionStorage.getItem('rol') == '2'){
+    if( localStorage.getItem('rol') == '2'){
       return true;
     }
     else{
@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
     }
   }
   showOption3(){
-    if( sessionStorage.getItem('rol') == '3'){
+    if( localStorage.getItem('rol') == '3'){
       return true;
     }
     else{

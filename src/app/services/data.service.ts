@@ -23,24 +23,30 @@ export class DataService {
     // this.getCurrentUser()
   }
 
-  getCurrentUser(){
-    return sessionStorage.getItem('rol'); 
+  getCurrentUser(){  // Esto obtine el usuario que esta activo
+    return localStorage.getItem('token'); 
   }
 
 
 
-  loginByEmail(form: LoginI): Observable<ResponseI>{
+  loginByEmail(form: LoginI): Observable<ResponseI>{  // Este es el metodo para loguearse
      let direccion = this.url;
       return this.http.post<ResponseI>(direccion, form);
   }
 
-  getToken(){
-    return sessionStorage.getItem('rol') || ""
-  }  // El token lo usare como el rol
+  getRol(){
+    return localStorage.getItem('rol') || ""
+  }  // Esto saca el rol del local storage
 
-  haveAccess(){
-    let loggintoken = sessionStorage.getItem('rol') || '';
-    if ( loggintoken == '3') {
+  haveAccess(){  // Esto es para obtener acceso segun el rol que inicio sesion 
+    let loggintoken = localStorage.getItem('rol') || '';
+    if ( loggintoken == '1') {
+      return true;
+    }
+    else if( loggintoken == '2' ){
+      return true;
+    }
+    else if( loggintoken == '3' ){
       return true;
     }
     else{

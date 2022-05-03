@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { LoginComponent } from './components/pages/login/login.component';
 import { PerfilComponent } from './components/pages/general/perfil/perfil.component';
-import { SoporteComponent } from './components/pages/cliente/soporte/soporte.component';
 import { BugsComponent } from './components/pages/general/bugs/bugs.component';
 import { NotificacionesComponent } from './components/pages/general/notificaciones/notificaciones.component';
 import { ConsultoriaComponent } from './components/pages/cliente/consultoria/consultoria.component';
@@ -36,11 +35,6 @@ const app_routes: Routes = [
       // }
     },
     { 
-      path: 'soporte', 
-      component: SoporteComponent,
-      canActivate: [AuthGuard]  
-    },
-    { 
       path: 'bugs', 
       component: BugsComponent,
       canActivate: [AuthGuard] 
@@ -56,13 +50,7 @@ const app_routes: Routes = [
       canActivate: [AuthGuard]  
     },
     { 
-      path: 'cliente/home', 
-      component: HomeComponent,
-      canActivate: [AuthGuard] 
-    },
-
-    { 
-      path: 'soporte/home', 
+      path: 'home', 
       component: HomeComponent,
       canActivate: [AuthGuard] 
     },

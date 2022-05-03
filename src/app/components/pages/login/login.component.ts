@@ -36,24 +36,11 @@ export class LoginComponent implements OnInit {
   onLogin(form: LoginI){
       this.dataSvc.loginByEmail(form).subscribe( data => {
         let dataResponse: ResponseI = data;
-        if(dataResponse.error == false && dataResponse.rol == '1'){
+        if(dataResponse.error == false && dataResponse.token != null){
           console.log(data);
-          sessionStorage.setItem("rol", dataResponse.rol);
-          this.router.navigate(['/cliente/home'])
-        }
-        else if( dataResponse.error == false && dataResponse.rol == '2' ){
-          console.log(data);
-          sessionStorage.setItem("rol", dataResponse.rol);
-          this.router.navigate(['/cliente-s/home'])
-        }
-        else if( dataResponse.error == false && dataResponse.rol == '3' ){
-          console.log(data);
-          sessionStorage.setItem("rol", dataResponse.rol);
-          this.router.navigate(['/soporte/home'])
-        }
-        else{
-          this.errorStatus = true;
-          this.errorMsg = dataResponse.message;
+          localStorage.setItem("token", dataResponse.token);
+          localStorage.setItem("rol", dataResponse.rol);
+          this.router.navigate(['home'])
         }
       });
   }

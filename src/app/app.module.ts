@@ -7,7 +7,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/pages/login/login.component';
-import { SoporteComponent } from './components/pages/cliente/soporte/soporte.component';
 import { PerfilComponent } from './components/pages/general/perfil/perfil.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/pages/general/home/home.component';
@@ -19,9 +18,6 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ChatComponent } from './components/pages/general/chat/chat.component';
 import { VentasComponent } from './components/pages/cliente/ventas/ventas.component';
-import { MenuClienteComponent } from './shared/menu-cliente/menu-cliente.component';
-// import { MenuSoporteComponent } from './shared/menu-soporte/menu-soporte.com';
-import { MenuClienteSComponent } from './shared/menu-clienteS/menu-clienteS.component';
 import { SoporteCSComponent } from './components/pages/cliente/soporte-cs/soporte-cs.component';
 import { DataService } from './services/data.service';
 import { TicketsComponent } from './components/pages/soporte-r/tickets/tickets.component';
@@ -36,7 +32,6 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
   declarations: [
     AppComponent,
     LoginComponent,
-    SoporteComponent,
     PerfilComponent,
     HomeComponent,
     ConsultoriaComponent,
@@ -47,9 +42,6 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     NavbarComponent,
     ChatComponent,
     VentasComponent,
-    MenuClienteComponent,
-    // MenuSoporteComponent,
-    MenuClienteSComponent,
     SoporteCSComponent,
     TicketsComponent,
     SolicitudIComponent,

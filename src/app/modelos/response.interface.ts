@@ -4,6 +4,6 @@ export interface ResponseI{
     rol: any;
     estado: number;
     message: string;
-    token: string;
+    token: any;
 
 }
