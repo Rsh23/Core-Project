@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { ResponseI } from '../../../modelos/response.interface';
-import { DataService } from '../../../services/data.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
-import { LoginI } from '../../../modelos/login.interface';
-=======
 import { LoginI } from '../../../modelos/login.interface';
 import { ResponseI } from '../../../modelos/response.interface';
 import { DataService } from '../../../services/data.service';
->>>>>>> f1454a750e4831d05c3d2d99325145299da6c395
 
 
 @Component({
@@ -20,10 +11,6 @@ import { DataService } from '../../../services/data.service';
 })
 export class HomeComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor( private dataSvc: DataService, private router: Router ) { }
-
-=======
   constructor() {
 
     this.checkLocalStorage();
@@ -43,13 +30,10 @@ export class HomeComponent implements OnInit {
 
 
   
->>>>>>> f1454a750e4831d05c3d2d99325145299da6c395
 
   ngOnInit(): void {
   }
 
-<<<<<<< HEAD
-=======
   // menuSelect(){
   //   if( this.select == 1 ){
   //     this.mostrarM = true;
@@ -89,6 +73,5 @@ export class HomeComponent implements OnInit {
 
   
 
->>>>>>> f1454a750e4831d05c3d2d99325145299da6c395
   
 }

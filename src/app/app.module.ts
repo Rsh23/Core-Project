@@ -26,6 +26,7 @@ import { SoporteCSComponent } from './components/pages/soporte-cs/soporte-cs.com
 import { DataService } from './services/data.service';
 import { TicketsComponent } from './components/pages/tickets/tickets.component';
 import { SolicitudIComponent } from './components/pages/solicitud-i/solicitud-i.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 
 
@@ -52,6 +53,7 @@ import { SolicitudIComponent } from './components/pages/solicitud-i/solicitud-i.
     SoporteCSComponent,
     TicketsComponent,
     SolicitudIComponent,
+    NotFoundComponent,
 
   ],
   imports: [
