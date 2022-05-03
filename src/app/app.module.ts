@@ -8,11 +8,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { SoporteComponent } from './components/pages/cliente/soporte/soporte.component';
-import { PerfilComponent } from './components/pages/soporte-r/perfil/perfil.component';
+import { PerfilComponent } from './components/pages/general/perfil/perfil.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './components/pages/soporte-r/home/home.component';
+import { HomeComponent } from './components/pages/general/home/home.component';
 import { ConsultoriaComponent } from './components/pages/cliente/consultoria/consultoria.component';
-import { NotificacionesComponent } from './components/pages/soporte-r/notificaciones/notificaciones.component';
+import { NotificacionesComponent } from './components/pages/general/notificaciones/notificaciones.component';
 import { BugsComponent } from './components/pages/general/bugs/bugs.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { RegisterComponent } from './components/pages/register/register.component';
@@ -26,8 +26,7 @@ import { SoporteCSComponent } from './components/pages/cliente/soporte-cs/soport
 import { DataService } from './services/data.service';
 import { TicketsComponent } from './components/pages/soporte-r/tickets/tickets.component';
 import { SolicitudIComponent } from './components/pages/soporte-r/solicitud-i/solicitud-i.component';
-import { TokenInterceptorService } from './services/token-interceptor.service';
-import { EscalamientoComponent } from './components/pages/soporte-r/escalamiento/escalamiento.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 
 
@@ -54,7 +53,7 @@ import { EscalamientoComponent } from './components/pages/soporte-r/escalamiento
     SoporteCSComponent,
     TicketsComponent,
     SolicitudIComponent,
-    EscalamientoComponent,
+    NotFoundComponent,
 
   ],
   imports: [
@@ -64,7 +63,7 @@ import { EscalamientoComponent } from './components/pages/soporte-r/escalamiento
     ReactiveFormsModule, 
     FormsModule
   ],
-  providers: [DataService, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

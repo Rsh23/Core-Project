@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { LoginComponent } from './components/pages/login/login.component';
-import { PerfilComponent } from './components/pages/soporte-r/perfil/perfil.component';
+import { PerfilComponent } from './components/pages/general/perfil/perfil.component';
 import { SoporteComponent } from './components/pages/cliente/soporte/soporte.component';
 import { BugsComponent } from './components/pages/general/bugs/bugs.component';
-import { NotificacionesComponent } from './components/pages/soporte-r/notificaciones/notificaciones.component';
+import { NotificacionesComponent } from './components/pages/general/notificaciones/notificaciones.component';
 import { ConsultoriaComponent } from './components/pages/cliente/consultoria/consultoria.component';
-import { HomeComponent } from './components/pages/soporte-r/home/home.component';
+import { HomeComponent } from './components/pages/general/home/home.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { ChatComponent } from './components/pages/general/chat/chat.component';
 import { VentasComponent } from './components/pages/cliente/ventas/ventas.component';
