@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { PerfilComponent } from './components/pages/general/perfil/perfil.component';

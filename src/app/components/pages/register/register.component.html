@@ -24,42 +24,42 @@
                             <!-- <span class="app-brand-text demo text-body fw-bolder">STG</span> -->
                         </div>
                         <!-- /Logo -->
-                        <form id="formAuthentication" class="mb-3">
+                        <form [formGroup]="registerForm" (ngSubmit)="createNewUser(registerForm.value)" class="mb-3">
                             <div class="mb-3">
-                                <label class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" autofocus />
+                                <label class="form-label" name="first_name" >Nombre</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" formControlName="nombres"  autofocus />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu correo eletrónico" />
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu correo eletrónico" formControlName="correo" />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Tipo de Usuario</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Cliente</option>
-                                    <option value="">Consultoria</option>
-                                    <option value="">Ventas</option>
-                                    <option value="">Soporte</option>
-                                    <option value="">Servicios Administrados</option>
-                                    <option value="">Gerencia</option>
+                                <select class="form-select" aria-label="Default select example" formControlName="tipo_usuario">
+                                    <option selected value=1>Cliente</option>
+                                    <option value=2>Consultoria</option>
+                                    <option value=3>Ventas</option>
+                                    <option value=4>Soporte</option>
+                                    <option value=5>Servicios Administrados</option>
+                                    <option value=6>Gerencia</option>
                                 </select>
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Contraseña</label>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                    <input type="password" id="clave" class="form-control" name="password" formControlName="clave" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Confirmar contraseña</label>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                    <input type="password" id="check" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
-                            <a [routerLink]="['/home']" routerLinkActive="router-link-active">
-                                <button class="btn btn-primary d-grid w-100">Crear Usuario</button>
+                            <a routerLinkActive="router-link-active">
+                                <input class="btn btn-primary d-grid w-100" type="submit" value="Crear Usuario">
                             </a>
                         </form>
 
@@ -68,6 +68,8 @@
                                 <span><hr> Inicia Sesión</span>
                             </a>
                         </p>
+
+                        <div class="alert alert-danger text-center fadeIn fast" *ngIf="errorStatus"> {{errorMsg}} </div>
                     </div>
                 </div>
                 <!-- Register Card -->
