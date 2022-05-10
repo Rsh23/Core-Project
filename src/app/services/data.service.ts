@@ -25,7 +25,7 @@ export class DataService {
   }
 
   getCurrentUser(){  // Esto obtine el usuario que esta activo
-    return localStorage.getItem('token'); 
+    return localStorage.getItem('jwtTokenName'); 
   }
 
 

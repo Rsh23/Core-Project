@@ -1,3 +1,4 @@
+<!-- <router-outlet></router-outlet> -->
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -102,61 +103,61 @@
                         </a>
                     </li>
                     <li class="menu-item" *ngIf="rol3">
-                      <a [routerLink]="['/tickets']" class="menu-link">
+                      <a [routerLink]="['tickets']" class="menu-link">
                           <i class="menu-icon tf-icons bx bx-receipt"></i>
                           <div data-i18n="Analytics">Tickets</div>
                       </a>
                     </li>
                     <li class="menu-item" *ngIf="rol3">
-                      <a [routerLink]="['/escalamiento']" class="menu-link">
+                      <a [routerLink]="['escalamiento']" class="menu-link">
                           <i class="menu-icon tf-icons bx bx-line-chart"></i>
                           <div data-i18n="Analytics">Escalamiento</div>
                       </a>
                     </li>
                     <li class="menu-item" *ngIf="rol3">
-                      <a [routerLink]="['/solicitud-i']" class="menu-link">
+                      <a [routerLink]="['solicitud-i']" class="menu-link">
                           <i class="menu-icon tf-icons bx bx-edit-alt"></i>
                           <div data-i18n="Analytics">Solicitud interna</div>
                       </a>
                     </li>  
                     <li class="menu-item" *ngIf="rol1 || rol2">
-                        <a [routerLink]="['/ventas']" class="menu-link">
+                        <a [routerLink]="['ventas']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-spreadsheet"></i>
                             <div data-i18n="Analytics">Ventas</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a [routerLink]="['/soporte-cs']" class="menu-link" *ngIf="rol1 || rol2">
+                        <a [routerLink]="['soporte-cs']" class="menu-link" *ngIf="rol1 || rol2">
                             <i class="menu-icon tf-icons bx bx-support"></i>
                             <div data-i18n="Analytics">Soporte</div>
                         </a>
                     </li>
                     <li class="menu-item" *ngIf="rol1 || rol2">
-                        <a [routerLink]="['/consultoria']" class="menu-link">
+                        <a [routerLink]="['consultoria']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-notepad"></i>
                             <div data-i18n="Analytics">Consultoria</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a [routerLink]="['/chat']" class="menu-link">
+                        <a [routerLink]="['chat']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-conversation"></i>
                             <div data-i18n="Analytics">Chat</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a [routerLink]="['/notificaciones']" class="menu-link">
+                        <a [routerLink]="['notificaciones']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-bell"></i>
                             <div data-i18n="Analytics">Notificaciones</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a [routerLink]="['/perfil']" class="menu-link">
+                        <a [routerLink]="['perfil']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-user"></i>
                             <div data-i18n="Analytics">Perfil</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a [routerLink]="['/bugs']" class="menu-link">
+                        <a [routerLink]="['bugs']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-bug"></i>
                             <div data-i18n="Analytics">Reporte de Bugs</div>
                         </a>

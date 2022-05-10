@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginI } from '../../../modelos/login.interface';
 import { Router } from '@angular/router';
 import { ResponseI } from '../../../modelos/response.interface';
+import Swal from 'sweetalert2';
 
 
 
@@ -18,11 +19,13 @@ import { ResponseI } from '../../../modelos/response.interface';
 export class LoginComponent implements OnInit {
 
   loginFrom = new FormGroup({
-      correo : new FormControl('', Validators.required),
-      clave : new FormControl('', Validators.required)
+      correo : new FormControl('',),
+      clave : new FormControl('',)
   });
 
-  constructor( private dataSvc: DataService, private router: Router ) { }
+  constructor( private dataSvc: DataService, private router: Router ) {
+    
+   }
 
   errorStatus: boolean = false;
   errorMsg: any = "";
@@ -38,19 +41,27 @@ export class LoginComponent implements OnInit {
         let dataResponse: ResponseI = data;
         if(dataResponse.error == false && dataResponse.token != null){
           console.log(data);
-          localStorage.setItem("token", dataResponse.token);
+          localStorage.setItem("jwtTokenName", dataResponse.token);
           localStorage.setItem("rol", dataResponse.rol);
-          this.router.navigate(['home'])
+          if (localStorage.getItem("rol") == "1") {
+            this.router.navigate(['cliente/home'])  
+          }
+          else if( localStorage.getItem("rol") == "2"){
+            this.router.navigate(['clientesup/home']);
+          }
+          else if( localStorage.getItem("rol") == "3"){
+            this.router.navigate(['soporte/home']);
+          }
         }
         else{
-          this.errorStatus = true;
-          this.errorMsg = dataResponse.message;
+          Swal.fire({
+            title: 'Error!',
+            text: 'Datos invalidos',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
         }
       });
   }
-
-
-
   
-
 }

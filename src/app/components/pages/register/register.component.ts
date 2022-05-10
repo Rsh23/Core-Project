@@ -4,10 +4,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../../services/user.service'
 import { RegisterI } from '../../../modelos/register.interface';
 import { RegisterResponseI } from '../../../modelos/registerResponseI.interface';
-// SweetAlert 2
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
-import 'sweetalert2/src/sweetalert2.scss'
 
 @Component({
   selector: 'app-register',
@@ -16,12 +14,13 @@ import 'sweetalert2/src/sweetalert2.scss'
   providers: [ UserService ]
 })
 export class RegisterComponent implements OnInit {
-
+ 
+  // Verificacion email
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   registerForm = new FormGroup({
-    nombres : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    correo : new FormControl('', [Validators.required]),
+    nombres : new FormControl('', [Validators.required, Validators.minLength(3) ]),
+    correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
     tipo_usuario : new FormControl('', [Validators.required]),
     clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
     confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
@@ -58,11 +57,6 @@ export class RegisterComponent implements OnInit {
           console.log( data );
           this.router.navigate(['login'])
         }
-        else{
-          console.log( data )
-          this.errorStatus = true;
-          this.errorMsg = dataResponse.message;
-        }
       }); 
 
     }
@@ -75,32 +69,46 @@ export class RegisterComponent implements OnInit {
       })
     }
 
-    
-
   }
 
-  onSaveForm(){  // Esto es para comprobar que el formulario sea valido
+  // get name(){ return this.registerForm.get('nombres'); }
+  // get email(){ return this.registerForm.get('correo'); }
+  // get tipo(){ return this.registerForm.get('tipo_usuario'); }
+  // get pass(){ return this.registerForm.get('clave'); }
+  // get passConf(){ return this.registerForm.get('confClave'); }
 
-    
+  onSaveForm( user: RegisterI ){  // Esto es para comprobar que el formulario sea valido
 
-  }
-
-  checkPassword(){
-    let checkP = document.getElementById("check");
-    let pass = document.getElementById("clave");
-    if ( this.registerForm == null ) {
-      alert('Debes confirmar la contraseña'); 
-      console.log( checkP )
-      return false;
-    }
-    else if ( checkP != pass ){
-      alert('Las contraseñas deben coincidir');
-      console.log( checkP )
-      return false;
+    if(this.registerForm.valid){
+      this.createNewUser( user );
+      this.onResetForm();
     }
     else{
-      return true;
+
     }
+
   }
+
+  onResetForm(){ 
+    this.registerForm.reset();
+  }
+
+  // checkPassword(){
+  //   let checkP = document.getElementById("check");
+  //   let pass = document.getElementById("clave");
+  //   if ( this.registerForm == null ) {
+  //     alert('Debes confirmar la contraseña'); 
+  //     console.log( checkP )
+  //     return false;
+  //   }
+  //   else if ( checkP != pass ){
+  //     alert('Las contraseñas deben coincidir');
+  //     console.log( checkP )
+  //     return false;
+  //   }
+  //   else{
+  //     return true;
+  //   }
+  // }
 
 }

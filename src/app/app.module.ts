@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ErrorTailorModule } from '@ngneat/error-tailor';
 
 
 
@@ -24,6 +25,10 @@ import { DataService } from './services/data.service';
 import { TicketsComponent } from './components/pages/soporte-r/tickets/tickets.component';
 import { SolicitudIComponent } from './components/pages/soporte-r/solicitud-i/solicitud-i.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { EscalamientoComponent } from './components/pages/soporte-r/escalamiento/escalamiento.component';
+import { ClienteComponent } from './components/pages/cliente/cliente.component';
+import { ClientesupComponent } from './components/pages/clientesup/clientesup.component';
+import { SoporteRComponent } from './components/pages/soporte-r/soporte-r.component'
 
 
 
@@ -47,6 +52,10 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     TicketsComponent,
     SolicitudIComponent,
     NotFoundComponent,
+    EscalamientoComponent,
+    ClienteComponent,
+    ClientesupComponent,
+    SoporteRComponent
 
   ],
   imports: [
@@ -54,9 +63,21 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule, 
-    FormsModule
+    FormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'Campo requerido',
+          minlength: ({ requiredLength, actualLength }) => 
+                      `Debe tener ${requiredLength} caracteres como minimo `,
+          invalidAddress: error => `Address isn't valid`
+        }
+      }
+    })
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
