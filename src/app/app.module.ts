@@ -28,7 +28,8 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { EscalamientoComponent } from './components/pages/soporte-r/escalamiento/escalamiento.component';
 import { ClienteComponent } from './components/pages/cliente/cliente.component';
 import { ClientesupComponent } from './components/pages/clientesup/clientesup.component';
-import { SoporteRComponent } from './components/pages/soporte-r/soporte-r.component'
+import { SoporteRComponent } from './components/pages/soporte-r/soporte-r.component';
+import { ClienteRoutingModule } from './components/pages/cliente/cliente-routing.module';
 
 
 
@@ -64,6 +65,8 @@ import { SoporteRComponent } from './components/pages/soporte-r/soporte-r.compon
     HttpClientModule,
     ReactiveFormsModule, 
     FormsModule,
+    ClienteRoutingModule,
+    
     ErrorTailorModule.forRoot({
       errors: {
         useValue: {
