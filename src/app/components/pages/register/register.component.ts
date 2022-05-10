@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   registerForm = new FormGroup({
-    nombres : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    correo : new FormControl('', [Validators.required]),
+    nombres : new FormControl('', [Validators.required]),
+    correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
     tipo_usuario : new FormControl('', [Validators.required]),
     clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
     confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
@@ -42,6 +42,8 @@ export class RegisterComponent implements OnInit {
     
   }
 
+
+  // Esto crea un nuevo usuario
   createNewUser( user: RegisterI ){
 
     if (this.registerForm.valid) {
@@ -57,11 +59,6 @@ export class RegisterComponent implements OnInit {
           })
           console.log( data );
           this.router.navigate(['login'])
-        }
-        else{
-          console.log( data )
-          this.errorStatus = true;
-          this.errorMsg = dataResponse.message;
         }
       }); 
 
@@ -79,11 +76,11 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  onSaveForm(){  // Esto es para comprobar que el formulario sea valido
+  // onSaveForm(){   Esto es para comprobar que el formulario sea valido
 
     
 
-  }
+  // }
 
   checkPassword(){
     let checkP = document.getElementById("check");

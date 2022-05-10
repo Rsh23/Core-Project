@@ -45,7 +45,7 @@
                         <br>
 
 
-                        <form [formGroup]="loginFrom" (ngSubmit)="onLogin(loginFrom.value)" class="mb-3" >
+                        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" class="mb-3">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" class="form-control" id="login" formControlName="correo" placeholder="Ingresa tu correo electrónico" autofocus />
@@ -58,7 +58,7 @@
                                     </a>
                                 </div>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="password" class="form-control" formControlName="clave"  placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                    <input type="password" id="password" class="form-control" formControlName="clave" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                             </div>
@@ -69,9 +69,9 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                
-                                    <input class="btn btn-primary d-grid w-100" type="submit" value="Iniciar Sesión">
-                                
+
+                                <input class="btn btn-primary d-grid w-100" type="submit" value="Iniciar Sesión">
+
                             </div>
                         </form>
 

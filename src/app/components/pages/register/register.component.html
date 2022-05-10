@@ -24,14 +24,14 @@
                             <!-- <span class="app-brand-text demo text-body fw-bolder">STG</span> -->
                         </div>
                         <!-- /Logo -->
-                        <form [formGroup]="registerForm" (ngSubmit)="createNewUser(registerForm.value)" class="mb-3">
+                        <form [formGroup]="registerForm" (ngSubmit)="createNewUser(registerForm.value)" class="mb-3" errorTailor>
                             <div class="mb-3">
-                                <label class="form-label" name="first_name" >Nombre</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" formControlName="nombres"  autofocus />
+                                <label class="form-label" name="first_name">Nombre</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" formControlName="nombres" autofocus />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu correo eletrónico" formControlName="correo" />
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu correo eletrónico" formControlName="correo" [controlErrorsTpl]="emailError" />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Tipo de Usuario</label>
@@ -46,17 +46,12 @@
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Contraseña</label>
-                                <div class="input-group input-group-merge">
-                                    <input type="password" id="clave" class="form-control" name="password" formControlName="clave" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                                </div>
+                                <input type="password" id="clave" class="form-control" name="password" formControlName="clave" />
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Confirmar contraseña</label>
-                                <div class="input-group input-group-merge">
-                                    <input type="password" #check class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
-                                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                                </div>
+                                <input type="password" class="form-control" formControlName="confClave" name="password" />
+
                             </div>
                             <a routerLinkActive="router-link-active">
                                 <input class="btn btn-primary d-grid w-100" type="submit" value="Crear Usuario">
@@ -76,6 +71,13 @@
             </div>
         </div>
     </div>
+
+    <ng-template let-error let-text="text" #emailError>
+        <div *ngIf="error">
+            El email debe ser valido
+        </div>
+    </ng-template>
+
 
 </body>
 

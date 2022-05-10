@@ -24,6 +24,7 @@ import { DataService } from './services/data.service';
 import { TicketsComponent } from './components/pages/soporte-r/tickets/tickets.component';
 import { SolicitudIComponent } from './components/pages/soporte-r/solicitud-i/solicitud-i.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { ErrorTailorModule } from '@ngneat/error-tailor';
 
 
 
@@ -54,7 +55,17 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule, 
-    FormsModule
+    FormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'Campo requerido',
+          minlength: ({ requiredLength, actualLength }) => 
+                      `La contraseña debe tener ${requiredLength} caracteres`,
+          invalidAddress: error => `Address isn't valid`
+        }
+      }
+    })
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,0 +1,19 @@
+input.ng-invalid.ng-touched {
+    border: solid 2px tomato;
+}
+
+select.ng-invalid.ng-touched {
+    border: solid 2px tomato;
+}
+
+input.ng-valid {
+    border: solid 2px greenyellow;
+}
+
+select.ng-valid {
+    border: solid 2px greenyellow;
+}
+
+control-error {
+    color: tomato;
+}
