@@ -97,29 +97,29 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item">
-                        <a [routerLink]="['/home']" class="menu-link">
+                        <a [routerLink]="['home']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home"></i>
                             <div data-i18n="Analytics">Inicio</div>
                         </a>
                     </li>
                     <li class="menu-item" *ngIf="rol3">
-                      <a [routerLink]="['tickets']" class="menu-link">
-                          <i class="menu-icon tf-icons bx bx-receipt"></i>
-                          <div data-i18n="Analytics">Tickets</div>
-                      </a>
+                        <a [routerLink]="['tickets']" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-receipt"></i>
+                            <div data-i18n="Analytics">Tickets</div>
+                        </a>
                     </li>
                     <li class="menu-item" *ngIf="rol3">
-                      <a [routerLink]="['escalamiento']" class="menu-link">
-                          <i class="menu-icon tf-icons bx bx-line-chart"></i>
-                          <div data-i18n="Analytics">Escalamiento</div>
-                      </a>
+                        <a [routerLink]="['escalamiento']" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-line-chart"></i>
+                            <div data-i18n="Analytics">Escalamiento</div>
+                        </a>
                     </li>
                     <li class="menu-item" *ngIf="rol3">
-                      <a [routerLink]="['solicitud-i']" class="menu-link">
-                          <i class="menu-icon tf-icons bx bx-edit-alt"></i>
-                          <div data-i18n="Analytics">Solicitud interna</div>
-                      </a>
-                    </li>  
+                        <a [routerLink]="['solicitud-i']" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-edit-alt"></i>
+                            <div data-i18n="Analytics">Solicitud interna</div>
+                        </a>
+                    </li>
                     <li class="menu-item" *ngIf="rol1 || rol2">
                         <a [routerLink]="['ventas']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-spreadsheet"></i>

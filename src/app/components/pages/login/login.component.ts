@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("jwtTokenName", dataResponse.token);
           localStorage.setItem("rol", dataResponse.rol);
           if (localStorage.getItem("rol") == "1") {
-            this.router.navigate(['cliente/home'])  
+            this.router.navigate(['cliente'])  
           }
           else if( localStorage.getItem("rol") == "2"){
             this.router.navigate(['clientesup/home']);

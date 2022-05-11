@@ -40,6 +40,10 @@ const app_routes: Routes = [
   { 
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'cliente',
+    loadChildren: ()=> import('./components/pages/page.module').then((m) => m.PageModule)
   },  
 
 

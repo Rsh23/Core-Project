@@ -28,12 +28,12 @@ const app_routes: Routes = [
       children: [
 
       { 
-        path: 'home', 
+        path: 'cliente/home', 
         component: HomeComponent,
         // canActivate: [AuthGuard] 
       },
       { 
-        path: 'perfil', 
+        path: 'cliente/perfil', 
         component: PerfilComponent,
         // canActivate: [AuthGuard],
         // data: {
