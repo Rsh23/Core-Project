@@ -23,6 +23,9 @@ import { EscalamientoComponent } from './soporte-r/escalamiento/escalamiento.com
 import { SolicitudIComponent } from './soporte-r/solicitud-i/solicitud-i.component';
 import { TicketsComponent } from './soporte-r/tickets/tickets.component';
 import { ClienteRoutingModule } from './cliente/cliente-routing.module';
+import { DataService } from 'src/app/services/data.service';
+import { RolGuard } from '../../core/guards/rol/rol.guard';
+import { RolchildGuard } from '../../core/guards/rol/rolchild.guard';
 
 
 
@@ -49,6 +52,11 @@ import { ClienteRoutingModule } from './cliente/cliente-routing.module';
     CommonModule,
     PageRoutingModule,
     ClienteRoutingModule
-  ]
+  ],
+  providers: [
+    DataService,
+    RolGuard,
+    RolchildGuard
+  ],
 })
 export class PageModule { }

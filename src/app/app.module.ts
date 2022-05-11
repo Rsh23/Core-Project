@@ -4,9 +4,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ErrorTailorModule } from '@ngneat/error-tailor';
 
-
-
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +12,7 @@ import { DataService } from './services/data.service';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 import { PageRoutingModule } from './components/pages/page-routing.module';
 import { ClienteRoutingModule } from './components/pages/cliente/cliente-routing.module';
+import { RolGuard } from './core/guards/rol/rol.guard';
 
 
 
@@ -51,6 +49,7 @@ import { ClienteRoutingModule } from './components/pages/cliente/cliente-routing
   ],
   providers: [
     DataService,
+    RolGuard
   ],
   bootstrap: [AppComponent]
 })
