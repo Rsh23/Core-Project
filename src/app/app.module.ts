@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { DataService } from './services/data.service';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+import { PageRoutingModule } from './components/pages/page-routing.module';
+import { ClienteRoutingModule } from './components/pages/cliente/cliente-routing.module';
 
 
 
@@ -33,6 +35,8 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
     HttpClientModule,
     ReactiveFormsModule, 
     FormsModule,
+    PageRoutingModule,
+    ClienteRoutingModule,
     
     ErrorTailorModule.forRoot({
       errors: {

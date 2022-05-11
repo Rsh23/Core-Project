@@ -17,8 +17,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut(){
-    if( localStorage.getItem('token') != null && localStorage.getItem('rol') != null ){
-      localStorage.removeItem('token');
+    if( localStorage.getItem('jwtTokenName') && localStorage.getItem('rol') != null ){
+      localStorage.removeItem('jwtTokenName');
       localStorage.removeItem('rol');
       this.router.navigate(['login']);
       console.log('Paso por aca');

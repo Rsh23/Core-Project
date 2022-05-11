@@ -21,19 +21,19 @@ const app_routes: Routes = [
 
   // Rutas cliente normal
   {
-      path: 'cliente',
+      path: '',
       component: ClienteComponent,
       canActivate: [AuthGuard],
       canActivateChild: [RolchildGuard],
       children: [
 
       { 
-        path: 'cliente/home', 
+        path: 'home', 
         component: HomeComponent,
         // canActivate: [AuthGuard] 
       },
       { 
-        path: 'cliente/perfil', 
+        path: 'perfil', 
         component: PerfilComponent,
         // canActivate: [AuthGuard],
         // data: {

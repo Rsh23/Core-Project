@@ -7,7 +7,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 const app_routes: Routes = [
 
   {
-    path: '',
+    path: 'cliente',
     component: ClienteComponent
   }
        
