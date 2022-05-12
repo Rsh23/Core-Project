@@ -13,6 +13,10 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { PageRoutingModule } from './components/pages/page-routing.module';
 import { ClienteRoutingModule } from './components/pages/cliente/cliente-routing.module';
 import { RolGuard } from './core/guards/rol/rol.guard';
+import { RolGuard2 } from './core/guards/rol/rol2.guard';
+import { RolGuard3 } from './core/guards/rol/rol3.guard';
+import { ClienteSupRoutingModule } from './components/pages/clientesup/cliente-sup-routing.module';
+import { SoporteRoutingModule } from './components/pages/soporte-r/soporte-routing.module';
 
 
 
@@ -35,6 +39,8 @@ import { RolGuard } from './core/guards/rol/rol.guard';
     FormsModule,
     PageRoutingModule,
     ClienteRoutingModule,
+    ClienteSupRoutingModule,
+    SoporteRoutingModule,
     
     ErrorTailorModule.forRoot({
       errors: {
@@ -49,7 +55,9 @@ import { RolGuard } from './core/guards/rol/rol.guard';
   ],
   providers: [
     DataService,
-    RolGuard
+    RolGuard,
+    RolGuard2,
+    RolGuard3
   ],
   bootstrap: [AppComponent]
 })

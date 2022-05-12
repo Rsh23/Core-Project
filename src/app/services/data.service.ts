@@ -36,37 +36,55 @@ export class DataService {
   }
 
   getRol(){
-    return localStorage.getItem('rol') || ""
+    return localStorage.getItem('rol')
   }  // Esto saca el rol del local storage
 
   haveAccess1(){  // Esto es para obtener acceso segun el rol que inicio sesion 
-    let loggintoken = localStorage.getItem('rol') || '';
+    let loggintoken = localStorage.getItem('rol');
     if ( loggintoken == '1') {
       return true;
     }
     else{
       alert("No tienes acesso!");
+      if( loggintoken == "2" ){
+        this.router.navigate(['clientesup']);
+      }
+      else if( loggintoken == "3" ){
+        this.router.navigate(['soporte'])
+      }
       return false;
     }
   }
   haveAccess2(){  // Esto es para obtener acceso segun el rol que inicio sesion 
-    let loggintoken = localStorage.getItem('rol') || '';
+    let loggintoken = localStorage.getItem('rol');
     if ( loggintoken == '2') {
       return true;
     }
     else{
       alert("No tienes acesso!");
+      if( loggintoken == "1" ){
+        this.router.navigate(['cliente'])
+      }
+      else if( loggintoken == "3" ){
+        this.router.navigate(['soporte'])
+      }
       return false;
     }
   }
   haveAccess3(){  // Esto es para obtener acceso segun el rol que inicio sesion 
-    let loggintoken = localStorage.getItem('rol') || '';
+    let loggintoken = localStorage.getItem('rol');
     if ( loggintoken == '3') {
       return true;
     }
     else{
       alert("No tienes acesso!");
-      return false;
+      if (loggintoken == "1"){
+        this.router.navigate(['cliente']);   
+      }
+      else if( loggintoken == "2"){
+        this.router.navigate(['clientesup']);
+      }
+    return false;
     }
   }
 

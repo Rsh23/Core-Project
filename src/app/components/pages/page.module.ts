@@ -26,6 +26,8 @@ import { ClienteRoutingModule } from './cliente/cliente-routing.module';
 import { DataService } from 'src/app/services/data.service';
 import { RolGuard } from '../../core/guards/rol/rol.guard';
 import { RolchildGuard } from '../../core/guards/rol/rolchild.guard';
+import { ClienteSupRoutingModule } from './clientesup/cliente-sup-routing.module';
+import { SoporteRoutingModule } from './soporte-r/soporte-routing.module';
 
 
 
@@ -51,7 +53,9 @@ import { RolchildGuard } from '../../core/guards/rol/rolchild.guard';
   imports: [
     CommonModule,
     PageRoutingModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    ClienteSupRoutingModule,
+    SoporteRoutingModule
   ],
   providers: [
     DataService,

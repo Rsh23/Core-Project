@@ -21,7 +21,7 @@ export class RolGuard implements CanActivate {
     }
     
     else{
-      this.router.navigate(['/home'])
+      // this.router.navigate(['cliente'])
       return false;
     }
   }

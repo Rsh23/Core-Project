@@ -37,141 +37,38 @@ const app_routes: Routes = [
     component: LoginComponent,
     // canActivate: [CheckLoginGuard]
   },
+  {
+    path: '',
+    component: LoginComponent
+  },
   { 
     path: 'register',
     component: RegisterComponent,
   },
   {
     path: 'cliente',
+    canActivate: [RolGuard, AuthGuard],
     loadChildren: ()=> import('./components/pages/page.module').then((m) => m.PageModule)
-  },  
-
-
-    // Rutas cliente super
-    {
-      path: 'clientesup',
-      component: ClienteComponent,
-      children: [
-
-       { 
-         path: '', 
-         component: HomeComponent,
-         // canActivate: [AuthGuard] 
-       },
-
-       { 
-        path: 'home', 
-        component: HomeComponent,
-        // canActivate: [AuthGuard] 
-      },
- 
-      { 
-        
-        path: 'perfil', 
-        component: PerfilComponent,
-        // canActivate: [AuthGuard],
-        // data: {
-        //   role: '1'
-        // }
-      },
-      { 
-        path: 'bugs', 
-        component: BugsComponent,
-        // canActivate: [AuthGuard] 
-      },
-      { 
-        path: 'notificaciones',
-        component: NotificacionesComponent,
-        // canActivate: [AuthGuard] 
-      },
-      { 
-        path: 'consultoria',
-        component: ConsultoriaComponent,
-        // canActivate: [AuthGuard]  
-      },
-      // { 
-      //   path: 'home', 
-      //   component: HomeComponent,
-      //   canActivate: [AuthGuard] 
-      // },
-    
-      { 
-        path: 'ventas', 
-        component: VentasComponent,
-        // canActivate: [AuthGuard] 
-      },
-      { 
-        path: 'soporte-cs', 
-        component: SoporteCSComponent ,
-        // canActivate: [AuthGuard]
-      },
-      {
-        path: 'tickets',
-        component: TicketsComponent,
-        // canActivate: [AuthGuard, RolGuard3]
-      },
-      {
-        path: 'solicitud-i',
-        component: SolicitudIComponent,
-        // canActivate: [AuthGuard, RolGuard3]
-      },
-      { 
-        path: 'chat', 
-        component: ChatComponent,
-        // canActivate: [AuthGuard]
-      },
-      {
-        path: 'escalamiento',
-        component: EscalamientoComponent,
-        // canActivate: [AuthGuard, RolGuard3]
-      },
-
-      ]
-    },
-
-    // Rutas soporte
-    {
-      path: 'soporte',
-      component: SoporteRComponent,
-      children: [
-        {
-          path: '',
-          component: HomeComponent
-        },
-        {
-          path: 'perfil',
-          component: PerfilComponent,
-        },
-        {
-          path: 'tickets',
-          component: TicketsComponent
-        },
-        {
-          path: 'escalamiento',
-          component: EscalamientoComponent
-        },
-        {
-          path: 'solicitud-i',
-          component: SolicitudIComponent
-        },
-        {
-          path: 'chat',
-          component: ChatComponent
-        }
-
-      ]
-    },
-
-     {
-       path: 'notfound',
-       component: NotFoundComponent
-     },
-
-    // { 
-    //   path: '**', 
-    //   pathMatch: 'full', 
-    //   redirectTo: 'notfound'
-    // },
+  },
+  {
+    path: 'clientesup',
+    canActivate: [RolGuard2, AuthGuard],
+    loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
+  },
+  {
+    path: 'soporte',
+    canActivate: [RolGuard3, AuthGuard],
+    loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
+  },
+  {
+    path: 'notfound',
+    component: NotFoundComponent
+  },
+  { 
+    path: '**', 
+    pathMatch: 'full', 
+    redirectTo: 'notfound'
+  },
        
 ];
 

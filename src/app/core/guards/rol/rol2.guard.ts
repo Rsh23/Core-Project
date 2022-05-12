@@ -19,7 +19,7 @@ export class RolGuard2 implements CanActivate {
     }
     
     else{
-      this.router.navigate(['/home'])
+      // this.router.navigate(['home'])
       return false;
     }
   }
