@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RolchildGuard implements CanActivateChild {
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    console.log("Paso por aca")
+    
     
     return true;
   }
