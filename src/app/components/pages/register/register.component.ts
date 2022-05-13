@@ -19,7 +19,11 @@ export class RegisterComponent implements OnInit {
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   registerForm = new FormGroup({
+<<<<<<< HEAD
     nombres : new FormControl('', [Validators.required, Validators.minLength(3) ]),
+=======
+    nombres : new FormControl('', [Validators.required]),
+>>>>>>> origin/master
     correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
     tipo_usuario : new FormControl('', [Validators.required]),
     clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -41,6 +45,8 @@ export class RegisterComponent implements OnInit {
     
   }
 
+
+  // Esto crea un nuevo usuario
   createNewUser( user: RegisterI ){
 
     if (this.registerForm.valid) {
@@ -71,17 +77,38 @@ export class RegisterComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
   // get name(){ return this.registerForm.get('nombres'); }
   // get email(){ return this.registerForm.get('correo'); }
   // get tipo(){ return this.registerForm.get('tipo_usuario'); }
   // get pass(){ return this.registerForm.get('clave'); }
   // get passConf(){ return this.registerForm.get('confClave'); }
+=======
+  // onSaveForm(){   Esto es para comprobar que el formulario sea valido
+>>>>>>> origin/master
 
   onSaveForm( user: RegisterI ){  // Esto es para comprobar que el formulario sea valido
 
+<<<<<<< HEAD
     if(this.registerForm.valid){
       this.createNewUser( user );
       this.onResetForm();
+=======
+  // }
+
+  checkPassword(){
+    let checkP = document.getElementById("check");
+    let pass = document.getElementById("clave");
+    if ( this.registerForm == null ) {
+      alert('Debes confirmar la contraseña'); 
+      console.log( checkP )
+      return false;
+    }
+    else if ( checkP != pass ){
+      alert('Las contraseñas deben coincidir');
+      console.log( checkP )
+      return false;
+>>>>>>> origin/master
     }
     else{
 

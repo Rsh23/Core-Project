@@ -26,6 +26,7 @@
                         <!-- /Logo -->
                         <form [formGroup]="registerForm" (ngSubmit)="createNewUser(registerForm.value)" class="mb-3" errorTailor>
                             <div class="mb-3">
+<<<<<<< HEAD
                                 <label class="form-label" name="first_name" >Nombre</label>
                                 <input type="text" class="form-control" placeholder="Ingresa tu nombre" formControlName="nombres"  autofocus />
                                 <!-- <div class="alert-danger" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
@@ -49,6 +50,14 @@
                                         El email debe ser valido
                                     </div>
                                 </div> -->
+=======
+                                <label class="form-label" name="first_name">Nombre</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" formControlName="nombres" autofocus />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu correo eletrónico" formControlName="correo" [controlErrorsTpl]="emailError" />
+>>>>>>> origin/master
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Tipo de Usuario</label>
@@ -72,7 +81,12 @@
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Confirmar contraseña</label>
+<<<<<<< HEAD
                                 <input type="password" class="form-control" formControlName="confClave" />    
+=======
+                                <input type="password" class="form-control" formControlName="confClave" name="password" />
+
+>>>>>>> origin/master
                             </div>
                             <a routerLinkActive="router-link-active">
                                 <input class="btn btn-primary d-grid w-100" type="submit" value="Crear Usuario">
@@ -95,10 +109,18 @@
 
     <ng-template let-error let-text="text" #emailError>
         <div *ngIf="error">
+<<<<<<< HEAD
             <p>El email debe ser valido</p>
         </div>
     </ng-template>
 
+=======
+            El email debe ser valido
+        </div>
+    </ng-template>
+
+
+>>>>>>> origin/master
 </body>
 
 </html>

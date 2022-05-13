@@ -47,17 +47,17 @@ const app_routes: Routes = [
   },
   {
     path: 'cliente',
-    canActivate: [RolGuard, AuthGuard],
+    canActivate: [AuthGuard, RolGuard],
     loadChildren: ()=> import('./components/pages/page.module').then((m) => m.PageModule)
   },
   {
     path: 'clientesup',
-    canActivate: [RolGuard2, AuthGuard],
+    canActivate: [AuthGuard, RolGuard2],
     loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
   },
   {
     path: 'soporte',
-    canActivate: [RolGuard3, AuthGuard],
+    canActivate: [AuthGuard, RolGuard3],
     loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
   },
   {

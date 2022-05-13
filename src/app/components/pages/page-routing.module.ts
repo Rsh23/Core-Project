@@ -15,17 +15,17 @@ const app_routes: Routes = [
   {
     path: 'cliente',
     component: ClienteComponent,
-    canActivate: [RolGuard, AuthGuard]
+    canActivate: [AuthGuard, RolGuard]
   },
   {
     path: 'clientesup',
     component: ClientesupComponent,
-    canActivate: [RolGuard2, AuthGuard]
+    canActivate: [AuthGuard, RolGuard2]
   },
   {
     path: 'soporte',
     component: SoporteRComponent,
-    canActivate: [RolGuard3, AuthGuard]
+    canActivate: [AuthGuard, RolGuard3]
   }
        
 ];

@@ -4,7 +4,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginI } from '../../../modelos/login.interface';
 import { Router } from '@angular/router';
 import { ResponseI } from '../../../modelos/response.interface';
+<<<<<<< HEAD
 import Swal from 'sweetalert2';
+=======
+import Swal from 'sweetalert2'
+>>>>>>> origin/master
 
 
 
@@ -18,9 +22,15 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
+<<<<<<< HEAD
   loginFrom = new FormGroup({
       correo : new FormControl('',),
       clave : new FormControl('',)
+=======
+  loginForm = new FormGroup({
+      correo : new FormControl('', /*Validators.required*/),
+      clave : new FormControl('', /*Validators.required*/)
+>>>>>>> origin/master
   });
 
   constructor( private dataSvc: DataService, private router: Router ) {
@@ -36,6 +46,8 @@ export class LoginComponent implements OnInit {
 
   }
 
+
+  // Esto loguea al usuario
   onLogin(form: LoginI){
       this.dataSvc.loginByEmail(form).subscribe( data => {
         let dataResponse: ResponseI = data;
@@ -56,7 +68,11 @@ export class LoginComponent implements OnInit {
         else{
           Swal.fire({
             title: 'Error!',
+<<<<<<< HEAD
             text: 'Datos invalidos',
+=======
+            text: 'Debes llenar todos los campos',
+>>>>>>> origin/master
             icon: 'error',
             confirmButtonText: 'Ok'
           })

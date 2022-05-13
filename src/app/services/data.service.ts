@@ -5,6 +5,7 @@ import { ResponseI } from '../modelos/response.interface';
 import { Observable, BehaviorSubject, catchError } from 'rxjs';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 
 
@@ -45,7 +46,14 @@ export class DataService {
       return true;
     }
     else{
-      alert("No tienes acesso!");
+      
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
+      // alert("No tienes acesso!");
       if( loggintoken == "2" ){
         this.router.navigate(['clientesup']);
       }
@@ -61,7 +69,13 @@ export class DataService {
       return true;
     }
     else{
-      alert("No tienes acesso!");
+      
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
       if( loggintoken == "1" ){
         this.router.navigate(['cliente'])
       }
@@ -77,7 +91,14 @@ export class DataService {
       return true;
     }
     else{
-      alert("No tienes acesso!");
+
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
+      // alert("No tienes acesso!");
       if (loggintoken == "1"){
         this.router.navigate(['cliente']);   
       }
