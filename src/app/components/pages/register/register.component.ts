@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../../../services/user.service'
 import { RegisterI } from '../../../modelos/register.interface';
 import { RegisterResponseI } from '../../../modelos/registerResponseI.interface';
@@ -19,12 +19,15 @@ export class RegisterComponent implements OnInit {
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   registerForm = new FormGroup({
-    nombres : new FormControl('', [Validators.required]),
+    nombres : new FormControl('', [Validators.required, Validators.minLength(3)]),
     correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
     tipo_usuario : new FormControl('', [Validators.required]),
     clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
     confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
-});
+  },
+  {
+  //   validators : [this.MustMatch( "clave", "confClave" )]
+  });
 
 
   constructor( private dataSvc: UserService, private router: Router ) {
@@ -39,6 +42,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  MustMatch(){
+
   }
 
 

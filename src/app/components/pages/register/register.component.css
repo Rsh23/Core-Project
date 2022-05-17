@@ -16,4 +16,9 @@ select.ng-valid {
 
 control-error {
     color: tomato;
+} */
+
+.form-submitted input.ng-invalid,
+.form-submitted select.ng-invalid {
+  border-color: #dc3545;
 }

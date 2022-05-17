@@ -34,7 +34,7 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
         useValue: {
           required: 'Campo requerido',
           minlength: ({ requiredLength, actualLength }) => 
-                      `La contraseña debe tener ${requiredLength} caracteres`,
+                      `Este campo requiere ${requiredLength} caracteres como minimo`,
           invalidAddress: error => `Address isn't valid`
         }
       }
