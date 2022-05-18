@@ -432,12 +432,8 @@
 
                       <div class="col-md-12" id="divchatchat" *ngIf="divChatChat">
                         
-                         
-                            <div class="card-body demo-vertical-spacing demo-only-element" id="divChat" style=" height:800px;overflow-y: scroll;">
-                              <div class="col d-flex p-0">
-                                <div class="card">
-                                    <div class="card-header bg-darkblue text-white py-1 px-2" style="flex: 1 1">
-                                        <div class="d-flex flex-row justify-content-start">
+                        <div class="card-header bg-darkblue text-white py-1 px-2" style="flex: 1 1">
+                                        <div class="d-flex flex-row justify-content-start col-12">
                                             <div class="col-3 p-1">
                                               <button type="button" class="btn rounded-pill btn-danger" (click)="hideChatChat(1)">  Volver</button>
                                             </div>
@@ -451,10 +447,14 @@
                                             </div>
                                         </div>
                                     </div>
+                         
+                            <div class="card-body demo-vertical-spacing demo-only-element col-12" id="divChat" style="height:550px;overflow-y: scroll;">
+                              <div class="col d-flex p-0">
+                                <div class="card" style="margin-left: 40px;">
                                     <div data-spy="scroll"  class="card-body bg-lightgrey d-flex flex-column p-0" style="flex: 9 1;">
                                         <div class="container-fluid message-scroll" style="flex: 1 1;height: 300px;">
                                             <div class="row">
-                                                <div class="card message-card m-1">
+                                                <div class="card message-card m-1 mb-2">
                                                     <div class="card-body p-2">
                                                         <span class="mx-2">Hi, Dave</span>
                                                         <span class="float-right mx-1"><small>14:13<svg class="svg-inline--fa fa-eye fa-w-18 fa-fw" style="color: #e64980; height: 30px;width: 30px;" aria-hidden="true" data-prefix="fas" data-icon="eye" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg><!-- <i class="fas fa-eye fa-fw" style="color:#e64980"></i> --></small></span>
@@ -462,7 +462,7 @@
                                                 </div>
                                             </div>
                                             <div class="row justify-content-end">
-                                                <div class="card message-card bg-lightblue m-1">
+                                                <div class="card message-card bg-lightblue m-1 mb-2">
                                                     <div class="card-body p-2">
                                                         <span class="mx-2">Hello, Stan</span>
                                                         <span class="float-right mx-1"><small>14:14<svg class="svg-inline--fa fa-eye fa-w-18 fa-fw" style="color: #e64980;height: 30px;width: 30px;" aria-hidden="true" data-prefix="fas" data-icon="eye" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M569.354 231.631C512.969 135.949 407.81 72 288 72 168.14 72 63.004 135.994 6.646 231.631a47.999 47.999 0 0 0 0 48.739C63.031 376.051 168.19 440 288 440c119.86 0 224.996-63.994 281.354-159.631a47.997 47.997 0 0 0 0-48.738zM288 392c-75.162 0-136-60.827-136-136 0-75.162 60.826-136 136-136 75.162 0 136 60.826 136 136 0 75.162-60.826 136-136 136zm104-136c0 57.438-46.562 104-104 104s-104-46.562-104-104c0-17.708 4.431-34.379 12.236-48.973l-.001.032c0 23.651 19.173 42.823 42.824 42.823s42.824-19.173 42.824-42.823c0-23.651-19.173-42.824-42.824-42.824l-.032.001C253.621 156.431 270.292 152 288 152c57.438 0 104 46.562 104 104z"></path></svg><!-- <i class="fas fa-eye fa-fw" style="color:#e64980"></i> --></small></span>
@@ -522,7 +522,7 @@
                             <div class="row">
                               <div class="col-md-4">
                                 
-                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="buscar casos...">
+                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar casos...">
                                 <datalist id="datalistOptions">
                                   <option value="caso 1"></option>
                                   <option value="tiket 001"></option>
@@ -533,7 +533,7 @@
                               </div>
                               <div class="col-md-4">
                                
-                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="buscar documento...">
+                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar documento...">
                                 <datalist id="datalistOptions">
                                   <option value="caso 1"></option>
                                   <option value="tiket 001"></option>
@@ -544,7 +544,7 @@
                               </div>
                               <div class="col-md-4">
                                 
-                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="buscar desarrollo...">
+                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar desarrollo...">
                                 <datalist id="datalistOptions">
                                   <option value="caso 1"></option>
                                   <option value="tiket 001"></option>
