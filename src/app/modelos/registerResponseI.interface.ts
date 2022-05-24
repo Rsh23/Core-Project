@@ -1,5 +1,5 @@
 export interface RegisterResponseI{
     error: boolean;
-    message: string;
-    estado: number;
+    status: number;
+    body: string;
 }

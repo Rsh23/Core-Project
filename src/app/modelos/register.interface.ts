@@ -1,8 +1,9 @@
 export interface RegisterI{
     nombres: string;
     correo: string;
-    tipo_usuario: number;
+    rol: number;
     clave: number;
+    id_organizacion: number;
     // confClave: string;
 
 }

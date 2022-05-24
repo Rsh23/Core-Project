@@ -6,6 +6,9 @@ import { Observable, BehaviorSubject, catchError } from 'rxjs';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { PathRest } from '../static/path-rest';
+import { rolResponse } from '../modelos/rolResponse.interface';
+import { orgResponse } from '../modelos/orgResponse.interface';
 
 
 
@@ -14,11 +17,9 @@ import Swal from 'sweetalert2';
 })
 export class DataService {
 
-  url: string = "backend/public/login";
-
   // user: any = localStorage.getItem('rol');
   // public getCurrentUser: ResponseI;
-  public nameUserLS = 'currentUserDesignicode';
+  // public nameUserLS = 'currentUserDesignicode';
 
 
   constructor( private http: HttpClient, private router: Router) {
@@ -31,9 +32,17 @@ export class DataService {
 
 
 
-  loginByEmail(form: LoginI): Observable<ResponseI >{  // Este es el metodo para loguearse
-     let direccion = this.url;
-      return this.http.post<ResponseI>(direccion, form)
+  loginByEmail(form: LoginI): Observable<ResponseI>{  // Este es el metodo para loguearse
+      return this.http.post<ResponseI>(PathRest.POST_LOGIN, form)
+  }
+
+  // Esto sirve para obtener el rol (Cliente, ClienteSuper, etc)
+  getRolPost(rol: []): Observable<rolResponse> {
+    return this.http.post<rolResponse>(PathRest.POST_ROL, rol)
+  }
+
+  getOrgPost( rol: [] ): Observable<orgResponse> {
+    return this.http.post<orgResponse>(PathRest.POST_ORG, rol);
   }
 
   getRol(){

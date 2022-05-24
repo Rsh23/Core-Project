@@ -5,6 +5,10 @@ import { UserService } from '../../../services/user.service'
 import { RegisterI } from '../../../modelos/register.interface';
 import { RegisterResponseI } from '../../../modelos/registerResponseI.interface';
 import Swal from 'sweetalert2';
+import { DataService } from 'src/app/services/data.service';
+import { rolResponse } from 'src/app/modelos/rolResponse.interface';
+import { RolGuard } from 'src/app/core/guards/rol/rol.guard';
+import { orgResponse } from 'src/app/modelos/orgResponse.interface';
 
 
 @Component({
@@ -21,7 +25,8 @@ export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     nombres : new FormControl('', [Validators.required, Validators.minLength(3)]),
     correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    tipo_usuario : new FormControl('', [Validators.required]),
+    rol : new FormControl('', [Validators.required]),
+    id_organizacion : new FormControl('', [Validators.required]),
     clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
     confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
   },
@@ -30,10 +35,11 @@ export class RegisterComponent implements OnInit {
   });
 
 
-  constructor( private dataSvc: UserService, private router: Router ) {
+  constructor( private dataSvc: UserService, private router: Router, private data: DataService ) {
     
    }
 
+  rol: number = 0;
   errorStatus: boolean = false;
   errorMsg: string = "";
   // check = document.getElementById('check').value;
@@ -41,7 +47,18 @@ export class RegisterComponent implements OnInit {
   aux: boolean = false;
 
   ngOnInit(): void {
+    this.getRol();
+    this.getOrg()
+
+    console.log( 1 );
     
+    // for ( let i in this.roles ){
+    //   console.log( i )
+    // }
+
+    // console.log( this.roles )
+
+    console.log( 2 );
   }
 
   MustMatch(){
@@ -78,6 +95,28 @@ export class RegisterComponent implements OnInit {
       })
     }
 
+  }
+
+
+  public roles: any = []; 
+
+  getRol(){
+    this.data.getRolPost( [] ).subscribe( rol => {
+      let dataResponse: rolResponse = rol;
+      console.log( dataResponse.body);
+      this.roles = dataResponse.body;
+      // console.log( this.roles );
+    } );
+  }
+
+  public organizacion: any = [];
+
+  getOrg(){
+    this.data.getOrgPost( [] ).subscribe( rol => {
+      let dataResponse: orgResponse = rol;
+      console.log( dataResponse.body )
+      this.organizacion = dataResponse.body;
+    } )
   }
 
   // onSaveForm(){   Esto es para comprobar que el formulario sea valido

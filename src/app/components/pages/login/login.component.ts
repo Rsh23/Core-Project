@@ -3,7 +3,7 @@ import { DataService } from '../../../services/data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginI } from '../../../modelos/login.interface';
 import { Router } from '@angular/router';
-import { ResponseI } from '../../../modelos/response.interface';
+import {  ResponseI } from '../../../modelos/response.interface';
 import Swal from 'sweetalert2'
 
 
@@ -41,10 +41,12 @@ export class LoginComponent implements OnInit {
   onLogin(form: LoginI){
       this.dataSvc.loginByEmail(form).subscribe( data => {
         let dataResponse: ResponseI = data;
-        if(dataResponse.error == false && dataResponse.token != null){
+        // let loginResponse: Body = data;
+        if(dataResponse.error == false){
           console.log(data);
-          localStorage.setItem("jwtTokenName", dataResponse.token);
-          localStorage.setItem("rol", dataResponse.rol);
+          console.log(dataResponse);
+          localStorage.setItem("jwtTokenName", dataResponse.body[0].token);
+          localStorage.setItem("rol", dataResponse.body[0].rol);
           if (localStorage.getItem("rol") == "1") {
             this.router.navigate(['cliente'])  
           }

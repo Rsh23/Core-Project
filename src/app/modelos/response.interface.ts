@@ -1,9 +1,15 @@
 export interface ResponseI{
     error: boolean;
-    correo: string;
-    rol: any;
-    estado: number;
-    message: string;
-    token: any;
+    status: number;
+    body : Body[]
 
+
+}
+
+interface Body{
+    clave : string;
+    rol : string
+    estado : number
+    correo : string
+    token : string
 }
