@@ -3,7 +3,7 @@ import { DataService } from '../../../services/data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginI } from '../../../modelos/login/login.interface';
 import { Router } from '@angular/router';
-import {  ResponseI } from '../../../modelos/login/response.interface';
+import { ResponseI } from '../../../modelos/login/response.interface';
 import Swal from 'sweetalert2'
 
 

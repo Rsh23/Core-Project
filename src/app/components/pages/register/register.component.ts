@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../../../services/user.service'
-import { RegisterI } from '../../../modelos/register/register.interface';
-import { RegisterResponseI } from '../../../modelos/register/registerResponseI.interface';
+import { RegisterI } from '../../../modelos/register.interface';
+import { RegisterResponseI } from '../../../modelos/registerResponseI.interface';
 import Swal from 'sweetalert2';
 import { DataService } from 'src/app/services/data.service';
-import { rolResponse } from 'src/app/modelos/rol/rolResponse.interface';
+import { rolResponse } from 'src/app/modelos/rolResponse.interface';
 import { RolGuard } from 'src/app/core/guards/rol/rol.guard';
-import { orgResponse } from 'src/app/modelos/organizacion/orgResponse.interface';
+import { orgResponse } from 'src/app/modelos/orgResponse.interface';
 
 
 @Component({
@@ -107,7 +107,6 @@ export class RegisterComponent implements OnInit {
     } )
   }
 
-  // onSaveForm(){   Esto es para comprobar que el formulario sea valido
 
   onSaveForm( user: RegisterI ){  // Esto es para comprobar que el formulario sea valido
 
