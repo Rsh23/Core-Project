@@ -16,12 +16,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // Esto hace logOut al usuario
   logOut(){
-    if( localStorage.getItem('jwtTokenName') && localStorage.getItem('rol') != null ){
-      localStorage.removeItem('jwtTokenName');
+    if( localStorage.getItem('token') && localStorage.getItem('rol') != null ){
+      localStorage.removeItem('token');
       localStorage.removeItem('rol');
       this.router.navigate(['login']);
-      console.log('Paso por aca');
     }
   }
 

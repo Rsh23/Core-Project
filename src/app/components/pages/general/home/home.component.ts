@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginI } from '../../../../modelos/login.interface';
-import { ResponseI } from '../../../../modelos/response.interface';
+import { LoginI } from '../../../../modelos/login/login.interface';
+import { ResponseI } from '../../../../modelos/login/response.interface';
 import { DataService } from '../../../../services/data.service';
 
 

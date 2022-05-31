@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { groupResponse } from 'src/app/modelos/chat/groupResponse.interface';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-chat',
@@ -7,15 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  constructor( private data: DataService ) { 
+  }
 
   divChatChat: boolean = false;
   divChatGrupos: boolean = true;
   divChatGrupos2: boolean = true;
   divChatPersonas: boolean = false;
   divChatChatMensaje: boolean = false;
+  public group : any = [];
 
   ngOnInit(): void {
+    this.showGroup();
+  }
+
+
+  // ESTO LISTA LOS GRUPOS SEGUN USUARIO LOGUEADO
+  showGroup(){
+    const group = { correo: sessionStorage.getItem("correo"),
+                    token: localStorage.getItem("token") }
+
+    this.data.getGroup( group ).subscribe( data => {
+      let dataResponse: groupResponse = data;
+      this.group = dataResponse.body
+    } )
   }
 
   hideChatGrupos (){

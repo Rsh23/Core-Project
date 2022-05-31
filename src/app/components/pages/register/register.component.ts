@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../../../services/user.service'
-import { RegisterI } from '../../../modelos/register.interface';
-import { RegisterResponseI } from '../../../modelos/registerResponseI.interface';
+import { RegisterI } from '../../../modelos/register/register.interface';
+import { RegisterResponseI } from '../../../modelos/register/registerResponseI.interface';
 import Swal from 'sweetalert2';
+import { DataService } from 'src/app/services/data.service';
+import { rolResponse } from 'src/app/modelos/rol/rolResponse.interface';
+import { RolGuard } from 'src/app/core/guards/rol/rol.guard';
+import { orgResponse } from 'src/app/modelos/organizacion/orgResponse.interface';
 
 
 @Component({
@@ -21,7 +25,8 @@ export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     nombres : new FormControl('', [Validators.required, Validators.minLength(3)]),
     correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    tipo_usuario : new FormControl('', [Validators.required]),
+    rol : new FormControl('', [Validators.required]),
+    id_organizacion : new FormControl('', [Validators.required]),
     clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
     confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
   },
@@ -30,10 +35,11 @@ export class RegisterComponent implements OnInit {
   });
 
 
-  constructor( private dataSvc: UserService, private router: Router ) {
+  constructor( private dataSvc: UserService, private router: Router, private data: DataService ) {
     
    }
 
+  rol: number = 0;
   errorStatus: boolean = false;
   errorMsg: string = "";
   // check = document.getElementById('check').value;
@@ -41,7 +47,8 @@ export class RegisterComponent implements OnInit {
   aux: boolean = false;
 
   ngOnInit(): void {
-    
+    this.getRol();
+    this.getOrg()
   }
 
   MustMatch(){
@@ -78,6 +85,26 @@ export class RegisterComponent implements OnInit {
       })
     }
 
+  }
+
+
+  public roles: any = []; 
+
+  getRol(){
+    this.data.getRolPost( [] ).subscribe( rol => {
+      let dataResponse: rolResponse = rol;
+      this.roles = dataResponse.body;
+      // console.log( this.roles );
+    } );
+  }
+
+  public organizacion: any = [];
+
+  getOrg(){
+    this.data.getOrgPost( [] ).subscribe( rol => {
+      let dataResponse: orgResponse = rol;
+      this.organizacion = dataResponse.body;
+    } )
   }
 
   // onSaveForm(){   Esto es para comprobar que el formulario sea valido

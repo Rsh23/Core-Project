@@ -1,29 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { RegisterI } from '../modelos/register.interface';
-import { RegisterResponseI } from '../modelos/registerResponseI.interface';
+import { RegisterI } from '../modelos/register/register.interface';
+import { RegisterResponseI } from '../modelos/register/registerResponseI.interface';
 import { Observable } from 'rxjs';
 import { Router }  from '@angular/router';
+import { PathRest } from '../static/path-rest';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  url: string = 'backend/public/registro'
 
   constructor( private http: HttpClient, private router: Router ) { }
 
+  // ESTE ES EL METODO PARA CREAR UN USUARIO
   create( user: RegisterI ): Observable<RegisterResponseI> {
-    let direccion = this.url;
-    return this.http.post<RegisterResponseI>(direccion, user)
+    return this.http.post<RegisterResponseI>(PathRest.POST_REGISTER, user)
   }
 
-  destroy(  ) {
-
-  }
-
-  update(  ) {
-
-  }
 }

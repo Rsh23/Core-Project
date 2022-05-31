@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/pages/register/register.componen
 import { DataService } from './services/data.service';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 import { ErrorTailorModule } from '@ngneat/error-tailor';
+// import { ObjToArray } from './core/objToArray.pipe';
 
 
 
@@ -21,6 +22,7 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
     LoginComponent,
     RegisterComponent,
     NotFoundComponent,
+    // ObjToArray
 
   ],
   imports: [

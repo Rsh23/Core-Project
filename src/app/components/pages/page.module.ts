@@ -28,6 +28,7 @@ import { RolGuard } from '../../core/guards/rol/rol.guard';
 import { RolchildGuard } from '../../core/guards/rol/rolchild.guard';
 import { ClienteSupRoutingModule } from './clientesup/cliente-sup-routing.module';
 import { SoporteRoutingModule } from './soporte-r/soporte-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -55,6 +56,7 @@ import { SoporteRoutingModule } from './soporte-r/soporte-routing.module';
     PageRoutingModule,
     ClienteRoutingModule,
     ClienteSupRoutingModule,
+    HttpClientModule,
     SoporteRoutingModule
   ],
   providers: [
