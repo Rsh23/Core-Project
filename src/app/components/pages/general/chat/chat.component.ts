@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { groupResponse } from 'src/app/modelos/chat/groupResponse.interface';
+import { DataService } from 'src/app/services/data.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-chat',
@@ -7,15 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  constructor( public modal: NgbModal, private data: DataService ) { 
+  }
 
   divChatChat: boolean = false;
   divChatGrupos: boolean = true;
   divChatGrupos2: boolean = true;
   divChatPersonas: boolean = false;
   divChatChatMensaje: boolean = false;
+  public group : any = [];
 
   ngOnInit(): void {
+    this.showGroup();
+  }
+
+  openCG(crear: any){
+    this.modal.open(crear, {centered: true})
+  }
+
+  // ESTO LISTA LOS GRUPOS SEGUN USUARIO LOGUEADO
+  showGroup(){
+    const group = { correo: sessionStorage.getItem("correo"),
+                    token: localStorage.getItem("token") }
+
+    this.data.getGroup( group ).subscribe( data => {
+      let dataResponse: groupResponse = data;
+      console.log( dataResponse );
+      this.group = dataResponse.body
+    } )
   }
 
   hideChatGrupos (){
@@ -23,6 +45,7 @@ export class ChatComponent implements OnInit {
     this.divChatChat = false;
     this.divChatPersonas = false;
     this.divChatGrupos = true;
+    this.divChatGrupos2 = true;
   
   }
 

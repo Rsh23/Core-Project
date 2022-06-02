@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginI } from '../modelos/login.interface';
-import { ResponseI } from '../modelos/response.interface';
+import { LoginI } from '../modelos/login/login.interface';
+import { ResponseI } from '../modelos/login/response.interface';
 import { Observable, BehaviorSubject, catchError } from 'rxjs';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
-
+import { PathRest } from '../static/path-rest';
+import { rolResponse } from '../modelos/rol/rolResponse.interface';
+import { orgResponse } from '../modelos/organizacion/orgResponse.interface';
+import { groupResponse } from '../modelos/chat/groupResponse.interface';
 
 
 @Injectable({
@@ -14,11 +16,9 @@ import Swal from 'sweetalert2';
 })
 export class DataService {
 
-  url: string = "backend/public/login";
-
   // user: any = localStorage.getItem('rol');
   // public getCurrentUser: ResponseI;
-  public nameUserLS = 'currentUserDesignicode';
+  // public nameUserLS = 'currentUserDesignicode';
 
 
   constructor( private http: HttpClient, private router: Router) {
@@ -26,14 +26,26 @@ export class DataService {
   }
 
   getCurrentUser(){  // Esto obtine el usuario que esta activo
-    return localStorage.getItem('jwtTokenName'); 
+    return localStorage.getItem('token'); 
   }
 
+  loginByEmail(form: LoginI): Observable<ResponseI>{  // Este es el metodo para loguearse
+      return this.http.post<ResponseI>(PathRest.POST_LOGIN, form)
+  }
 
+  // Esto sirve para obtener el rol (Cliente, ClienteSuper, etc)
+  getRolPost(rol: []): Observable<rolResponse> {
+    return this.http.post<rolResponse>(PathRest.POST_ROL, rol)
+  }
 
-  loginByEmail(form: LoginI): Observable<ResponseI >{  // Este es el metodo para loguearse
-     let direccion = this.url;
-      return this.http.post<ResponseI>(direccion, form)
+  // ESTO LISTA LAS ORGANIZACIONES EXISTENTES
+  getOrgPost( rol: [] ): Observable<orgResponse> {
+    return this.http.post<orgResponse>(PathRest.POST_ORG, rol);
+  }
+
+  // ESTO LISTA LOS GRUPOS DEL USUARIO LOGUEADO
+  getGroup( group: {} ): Observable<groupResponse> {
+    return this.http.post<groupResponse>(PathRest.POST_CHAT_LISTAR, group)
   }
 
   getRol(){

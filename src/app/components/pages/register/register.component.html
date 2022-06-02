@@ -35,20 +35,16 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Tipo de Usuario</label>
-                                <select class="form-select" aria-label="Default select example" formControlName="tipo_usuario">
-                                    <option selected value=1>Cliente</option>
-                                    <option value=2>Consultoria</option>
-                                    <option value=3>Ventas</option>
-                                    <option value=4>Soporte</option>
-                                    <option value=5>Servicios Administrados</option>
-                                    <option value=6>Gerencia</option>
+                                <select class="form-select" aria-label="Default select example" formControlName="rol">
+                                    <option *ngFor="let rol of roles" [value]="rol.id" > {{ rol.nombre }} </option>
                                 </select>
                             </div>
-                            <!-- <div class="alert-danger" *ngIf="tipo?.invalid && (tipo?.dirty || tipo?.touched)"> 
-                                <div class="container-error-message" *ngIf="tipo?.errors?.['required']">
-                                    El tipo de usuario es requerido
-                                </div>
-                            </div> -->
+                            <div class="mb-3">
+                                <label class="form-label">Organización</label>
+                                <select class="form-select" aria-label="Default select example" formControlName="id_organizacion">
+                                    <option *ngFor="let org of organizacion" [value]="org.id"> {{ org.nombre }} </option>
+                                </select>
+                            </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Contraseña</label>
                                 <input type="password" id="clave" class="form-control" name="clave" formControlName="clave" />
@@ -63,13 +59,17 @@
                             </a>
                         </form>
 
+                        <!-- <p class="text-center">
+                            <button (click)=print()>
+                                <span><hr> Imprimir </span>
+                            </button>
+                        </p> -->
+
                         <p class="text-center">
                             <a [routerLink]="['/login']" routerLinkActive="router-link-active">
                                 <span><hr> Inicia Sesión</span>
                             </a>
                         </p>
-
-                        <!-- <div class="alert alert-danger text-center fadeIn fast" *ngIf="errorStatus"> {{errorMsg}} </div> -->
                     </div>
                 </div>
                 <!-- Register Card -->

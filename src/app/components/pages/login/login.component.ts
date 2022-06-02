@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LoginI } from '../../../modelos/login.interface';
+import { LoginI } from '../../../modelos/login/login.interface';
 import { Router } from '@angular/router';
-import { ResponseI } from '../../../modelos/response.interface';
+import { ResponseI } from '../../../modelos/login/response.interface';
 import Swal from 'sweetalert2'
 
 
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
       correo : new FormControl('',),
-      clave : new FormControl('',)
+      clave : new FormControl('', )
   });
 
   constructor( private dataSvc: DataService, private router: Router ) {
@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
   errorStatus: boolean = false;
   errorMsg: any = "";
   mostrarM : boolean = false;
+  correo : string = "";
+  token : string = "";
 
   ngOnInit(): void {
    
@@ -41,12 +43,12 @@ export class LoginComponent implements OnInit {
   onLogin(form: LoginI){
       this.dataSvc.loginByEmail(form).subscribe( data => {
         let dataResponse: ResponseI = data;
-        if(dataResponse.error == false && dataResponse.token != null){
-          console.log(data);
-          localStorage.setItem("jwtTokenName", dataResponse.token);
-          localStorage.setItem("rol", dataResponse.rol);
+        if( dataResponse.error == false ){
+          localStorage.setItem("token", dataResponse.body[0].token);  // Aqui se guarda el token en el localStorage
+          localStorage.setItem("rol", dataResponse.body[0].rol);      // Aqui se guarda el rol en el localStorage
+          sessionStorage.setItem("correo", dataResponse.body[0].correo);   // Aqui se guarda el correo en el sessionStorage
           if (localStorage.getItem("rol") == "1") {
-            this.router.navigate(['cliente'])  
+            this.router.navigate(['cliente']) 
           }
           else if( localStorage.getItem("rol") == "2"){
             this.router.navigate(['clientesup/home']);
@@ -63,6 +65,7 @@ export class LoginComponent implements OnInit {
             confirmButtonText: 'Ok'
           })
         }
+
       });
   }
   
