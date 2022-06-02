@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginI } from '../../../../modelos/login/login.interface';
 import { ResponseI } from '../../../../modelos/login/response.interface';
 import { DataService } from '../../../../services/data.service';
+import { ChartsService } from '../../../../services/charts.service';
 
 
 @Component({
@@ -11,67 +12,65 @@ import { DataService } from '../../../../services/data.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
 
-    this.checkLocalStorage();
+  constructor( private ChartsService: ChartsService ) {
     
-
-   }
-
-  // select: ResponseI['rol'] = 0 ;
-  menuCliente: boolean = false;  // rol 1
-  menuClienteS: boolean = false; // rol 2
-  menuSup: boolean = false;  // rol 3 
-  menuLiderS: boolean = false; // rol 4
-  menuConsult: boolean = false;  // rol 5
-  menuLiderC: boolean = false; // rol 6
-  menuGerencia: boolean = false // rol 7
-  menuVentas: boolean = false // rol 8
+  }
 
 
+
+
+
+  // options
+
+  // Grafico 2
+  legend: boolean = true;
+  animations: boolean = true;
+  xAxis: boolean = true;
+  yAxis: boolean = true;
+  showYAxisLabel: boolean = true;
+  showXAxisLabel: boolean = true;
+  xAxisLabel: string = 'Year';
+  yAxisLabel: string = 'Population';
+  timeline: boolean = true;
+
+  get multi(){
+    return this.ChartsService.multiData
+  }
+
+
+  // Grafico 1
+  view: [number, number] = [700, 400];
+
+  get single(){
+    return this.ChartsService.countryData;
+  }
+
+
+  onRandomData(){
+    this.ChartsService.randomData(); 
+  }
+
+  // options
+  gradient: boolean = true;
+  showLegend: boolean = true;
+  showLabels: boolean = true;
+  isDoughnut: boolean = false;
+
+  onSelect(data: any): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  onActivate(data: any): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data: any): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
   
 
   ngOnInit(): void {
   }
-
-  // menuSelect(){
-  //   if( this.select == 1 ){
-  //     this.mostrarM = true;
-  //     console.log("Hecho")
-  //   }
-  // }
-
-  checkLocalStorage(){
-
-    if ( sessionStorage.getItem('rol') == "1" ) {
-      this.menuCliente = true;
-    }
-    else if ( sessionStorage.getItem('rol') == "2"){
-      this.menuClienteS = true;
-    }
-    else if ( sessionStorage.getItem('rol') == "3"){
-      this.menuSup = true;
-    }
-    else if ( sessionStorage.getItem('rol') == "4"){
-      this.menuLiderS = true;
-    }
-    else if ( sessionStorage.getItem('rol') == "5"){
-      this.menuConsult = true;
-    }
-    else if ( sessionStorage.getItem('rol') == "6"){
-      this.menuLiderC = true;
-    }
-    else if ( sessionStorage.getItem('rol') == "7"){
-      this.menuGerencia = true;
-    }
-    else{
-      this.menuVentas = true;
-    }
-
-
-   }
-
-  
-
   
 }

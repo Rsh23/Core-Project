@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PageRoutingModule } from './page-routing.module';
+
 //Roles
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClientesupComponent } from './clientesup/clientesup.component';
@@ -57,7 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
     ClienteRoutingModule,
     ClienteSupRoutingModule,
     HttpClientModule,
-    SoporteRoutingModule
+    SoporteRoutingModule,
+    NgxChartsModule
   ],
   providers: [
     DataService,
