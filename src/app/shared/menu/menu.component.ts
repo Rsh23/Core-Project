@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
   rol1: boolean = false;
   rol2: boolean = false;
   rol3: boolean = false;
+  activo: boolean = false;
 
   constructor( private service: DataService ) {
     this.showOption();
@@ -34,7 +35,9 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
-
+  btnSwitch(){
+    document.body.classList.toggle('dark');
+    this.activo = !this.activo;
+  }
   
 }
