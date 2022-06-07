@@ -106,6 +106,18 @@
 
                                     <div>
                                         <p>Aca deberia haber un grafico con las skills del usuario</p>
+
+                                        <ngx-charts-advanced-pie-chart
+                                        [view]="view"
+                                        scheme="vivid"
+                                        [results]="single"
+                                        [gradient]="gradient"
+                                        (select)="onSelect($event)"
+                                        (activate)="onActivate($event)"
+                                        (deactivate)="onDeactivate($event)"
+                                        >
+                                        </ngx-charts-advanced-pie-chart>
+
                                     </div>
 
                                     <p class="mb-0">

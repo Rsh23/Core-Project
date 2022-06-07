@@ -11,6 +11,11 @@ interface multi {
 
 }
 
+interface skills {
+  name: string;
+  value: number;
+}
+
 interface Series {
   name: string;
   value: number;
@@ -35,6 +40,15 @@ export class ChartsService {
       "value": 7200000
     }
   ];
+
+  private skills: skills[] = [
+    {
+      "name": "PHP",
+      "value": 100
+    },
+  ];
+
+  
 
   private multi: multi[] = [
     {
@@ -110,7 +124,11 @@ export class ChartsService {
   }
 
   get multiData(){
-    return this.multi
+    return this.multi;
+  }
+
+  get dataSkills(){
+    return this.skills;
   }
 
   randomData(){

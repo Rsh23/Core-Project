@@ -43,7 +43,9 @@ export class LoginComponent implements OnInit {
   onLogin(form: LoginI){
       this.dataSvc.loginByEmail(form).subscribe( data => {
         let dataResponse: ResponseI = data;
+        console.log( dataResponse );
         if( dataResponse.error == false ){
+          // console.log( dataResponse )
           localStorage.setItem("token", dataResponse.body[0].token);  // Aqui se guarda el token en el localStorage
           localStorage.setItem("rol", dataResponse.body[0].rol);      // Aqui se guarda el rol en el localStorage
           sessionStorage.setItem("correo", dataResponse.body[0].correo);   // Aqui se guarda el correo en el sessionStorage
@@ -52,12 +54,15 @@ export class LoginComponent implements OnInit {
           }
           else if( localStorage.getItem("rol") == "2"){
             this.router.navigate(['clientesup/home']);
+            console.log("Paso por aca");
           }
           else if( localStorage.getItem("rol") == "3"){
             this.router.navigate(['soporte/home']);
+            console.log("Paso por aca");
           }
         }
         else{
+          console.log("Paso por el else");
           Swal.fire({
             title: 'Error!',
             text: 'Datos invalidos',
@@ -65,7 +70,6 @@ export class LoginComponent implements OnInit {
             confirmButtonText: 'Ok'
           })
         }
-
       });
   }
   

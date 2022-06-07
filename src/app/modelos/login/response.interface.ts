@@ -1,9 +1,7 @@
 export interface ResponseI{
     error: boolean;
     status: number;
-    body : Body[]
-
-
+    body : Body[];
 }
 
 interface Body{

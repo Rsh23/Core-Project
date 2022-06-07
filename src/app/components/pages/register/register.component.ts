@@ -79,7 +79,7 @@ export class RegisterComponent implements OnInit {
     else{
       Swal.fire({
         title: 'Error!',
-        text: 'Debes llenar todos los campos',
+        text: 'Debes llenar todos los campos correctamente',
         icon: 'error',
         confirmButtonText: 'Ok'
       })
