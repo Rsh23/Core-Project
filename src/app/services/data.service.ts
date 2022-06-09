@@ -9,6 +9,7 @@ import { PathRest } from '../static/path-rest';
 import { rolResponse } from '../modelos/rol/rolResponse.interface';
 import { orgResponse } from '../modelos/organizacion/orgResponse.interface';
 import { groupResponse } from '../modelos/chat/groupResponse.interface';
+import { statusResponse } from '../modelos/tickets/statusResponse.interface';
 
 
 @Injectable({
@@ -33,19 +34,25 @@ export class DataService {
       return this.http.post<ResponseI>(PathRest.POST_LOGIN, form)
   }
 
+
+
   // Esto sirve para obtener el rol (Cliente, ClienteSuper, etc)
   getRolPost(rol: []): Observable<rolResponse> {
-    return this.http.post<rolResponse>(PathRest.POST_ROL, rol)
+    return this.http.post<rolResponse>(PathRest.POST_ROL, rol);
   }
 
   // ESTO LISTA LAS ORGANIZACIONES EXISTENTES
-  getOrgPost( rol: [] ): Observable<orgResponse> {
-    return this.http.post<orgResponse>(PathRest.POST_ORG, rol);
+  getOrgPost( org: [] ): Observable<orgResponse> {
+    return this.http.post<orgResponse>(PathRest.POST_ORG, org);
   }
 
   // ESTO LISTA LOS GRUPOS DEL USUARIO LOGUEADO
   getGroup( group: {} ): Observable<groupResponse> {
-    return this.http.post<groupResponse>(PathRest.POST_CHAT_LISTAR, group)
+    return this.http.post<groupResponse>(PathRest.POST_CHAT_LISTAR, group);
+  }
+
+  getStatus( status: {} ): Observable<statusResponse>{
+    return this.http.post<statusResponse>(PathRest.POST_STATUS_TICKET, status);
   }
 
   getRol(){

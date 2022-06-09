@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
 
   // Esto loguea al usuario
   onLogin(form: LoginI){
+    try{
       this.dataSvc.loginByEmail(form).subscribe( data => {
         let dataResponse: ResponseI = data;
         console.log( dataResponse );
@@ -71,6 +72,16 @@ export class LoginComponent implements OnInit {
           })
         }
       });
+    }
+    catch (err) {
+      console.log("Paso por el else");
+          Swal.fire({
+            title: 'Error!',
+            text: 'Datos invalidos',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+    }  
   }
   
 }

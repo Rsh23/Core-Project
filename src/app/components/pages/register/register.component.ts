@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../../../services/user.service'
-import { RegisterI } from '../../../modelos/register.interface';
-import { RegisterResponseI } from '../../../modelos/registerResponseI.interface';
+import { RegisterI } from '../../../modelos/register/register.interface';
+import { RegisterResponseI } from '../../../modelos/register/registerResponseI.interface';
 import Swal from 'sweetalert2';
 import { DataService } from 'src/app/services/data.service';
-import { rolResponse } from 'src/app/modelos/rolResponse.interface';
+import { rolResponse } from 'src/app/modelos/rol/rolResponse.interface';
 import { RolGuard } from 'src/app/core/guards/rol/rol.guard';
-import { orgResponse } from 'src/app/modelos/orgResponse.interface';
+import { orgResponse } from 'src/app/modelos/organizacion/orgResponse.interface';
 
 
 @Component({
@@ -19,6 +19,8 @@ import { orgResponse } from 'src/app/modelos/orgResponse.interface';
 })
 export class RegisterComponent implements OnInit {
  
+  // reactiveForm: FormGroup;
+
   // Verificacion email
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -31,11 +33,11 @@ export class RegisterComponent implements OnInit {
     confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
   },
   {
-  //   validators : [this.MustMatch( "clave", "confClave" )]
+    // Validators : this.MustMatch( "clave", "confClave" )
   });
 
 
-  constructor( private dataSvc: UserService, private router: Router, private data: DataService ) {
+  constructor( private dataSvc: UserService, private router: Router, private data: DataService, private reactiveForm: FormGroup  ) {
     
    }
 
@@ -53,6 +55,10 @@ export class RegisterComponent implements OnInit {
 
   MustMatch(){
 
+  }
+
+  get f (){
+    return this.reactiveForm.controls;
   }
 
 

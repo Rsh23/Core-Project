@@ -35,7 +35,7 @@
     }
 }
 * {
-    border-radius: 0px!important;
+    /* border-radius: 0px!important; */
     border-collapse: collapse;
     box-shadow:none!important;
 }  
