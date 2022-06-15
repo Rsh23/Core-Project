@@ -21,24 +21,36 @@ export class RegisterComponent implements OnInit {
  
   // reactiveForm: FormGroup;
 
-  // Verificacion email
+  // Esto verifica que el email sea valido
+  reactiveForm: FormGroup;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  registerForm = new FormGroup({
-    nombres : new FormControl('', [Validators.required, Validators.minLength(3)]),
-    correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    rol : new FormControl('', [Validators.required]),
-    id_organizacion : new FormControl('', [Validators.required]),
-    clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
-    confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
-  },
-  {
-    // Validators : this.MustMatch( "clave", "confClave" )
-  });
+  // registerForm = new FormGroup({
+  //   nombres : new FormControl('', [Validators.required, Validators.minLength(3)]),
+  //   correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
+  //   rol : new FormControl('', [Validators.required]),
+  //   id_organizacion : new FormControl('', [Validators.required]),
+  //   clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
+  //   confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
+  // },
+  // {
+  //   // validators : this.MustMatch()
+  // });
 
 
-  constructor( private dataSvc: UserService, private router: Router, private data: DataService, private reactiveForm: FormGroup  ) {
-    
+  constructor( private dataSvc: UserService, private router: Router, private data: DataService, private formBuilder: FormBuilder ) {
+    this.reactiveForm = this.formBuilder.group({
+      nombres : new FormControl('', [Validators.required, Validators.minLength(3)]),
+      correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
+      rol : new FormControl('', [Validators.required]),
+      id_organizacion : new FormControl('', [Validators.required]),
+      clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
+      confClave : new FormControl('', [Validators.required])
+    },
+    {
+      validators: this.MustMatch('clave', 'confClave')
+    })
+
    }
 
   rol: number = 0;
@@ -53,8 +65,21 @@ export class RegisterComponent implements OnInit {
     this.getOrg()
   }
 
-  MustMatch(){
-
+  // Esto valida que las contraseñas sean iguales
+  MustMatch(controlName: string, matchingControlName: string){
+    return(formGroup: FormGroup)=>{
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+      if(matchingControl.errors && !matchingControl.errors['MustMatch']){
+        return
+      }
+      if(control.value !== matchingControl.value){
+        matchingControl.setErrors({MustMatch: true} )
+      }
+      else{
+        matchingControl.setErrors(null);
+      }
+    }
   }
 
   get f (){
@@ -65,7 +90,7 @@ export class RegisterComponent implements OnInit {
   // Esto crea un nuevo usuario
   createNewUser( user: RegisterI ){
 
-    if (this.registerForm.valid) {
+    if (this.reactiveForm.valid) {
       
       this.dataSvc.create(user).subscribe( data => {
         let dataResponse: RegisterResponseI = data;
@@ -138,7 +163,7 @@ export class RegisterComponent implements OnInit {
   // }
 
   onResetForm(){ 
-    this.registerForm.reset();
+    this.reactiveForm.reset();
   }
 
   // checkPassword(){

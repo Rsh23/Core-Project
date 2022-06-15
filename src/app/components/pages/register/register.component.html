@@ -24,7 +24,7 @@
                             <!-- <span class="app-brand-text demo text-body fw-bolder">STG</span> -->
                         </div>
                         <!-- /Logo -->
-                        <form [formGroup]="registerForm" (ngSubmit)="createNewUser(registerForm.value)" class="mb-3" errorTailor>
+                        <form [formGroup]="reactiveForm" (ngSubmit)="createNewUser(reactiveForm.value)" class="mb-3" errorTailor>
                             <div class="mb-3">
                                 <label class="form-label" name="first_name">Nombre</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" formControlName="nombres" autofocus />
@@ -51,7 +51,7 @@
                             </div>
                             <div class="mb-3 form-password-toggle">
                                 <label class="form-label" for="password">Confirmar contraseña</label>
-                                <input type="password" class="form-control" formControlName="confClave" name="confClave" />
+                                <input type="password" appPasswordMatch="clave" class="form-control" formControlName="confClave" name="confClave" [controlErrorsTpl]="passwordMatch"/>
 
                             </div>
                             <a routerLinkActive="router-link-active">
@@ -83,6 +83,14 @@
         </div>
     </ng-template>
 
+    <ng-template #passwordMatch>
+        <div *ngIf="f['confClave'].errors?.['MustMatch']">
+            Las contraseñas deben coincidir
+        </div>
+        <div *ngIf="f['confClave'].errors?.['required']">
+            Campo requerido
+        </div>
+    </ng-template>
 
 </body>
 
