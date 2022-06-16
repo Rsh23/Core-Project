@@ -104,6 +104,14 @@ export class RegisterComponent implements OnInit {
           console.log( data );
           this.router.navigate(['login'])
         }
+        else {
+          Swal.fire({
+            title: 'Error!',
+            text: 'El email ya se encuentra registrado',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+        }
       }); 
 
     }

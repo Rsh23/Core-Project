@@ -12,6 +12,7 @@ import { DataService } from './services/data.service';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 import { ErrorTailorModule } from '@ngneat/error-tailor';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 
 
 
@@ -44,6 +45,13 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         }
       }
     })
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
