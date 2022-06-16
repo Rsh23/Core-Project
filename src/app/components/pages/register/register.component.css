@@ -1,9 +1,9 @@
 input.ng-invalid.ng-touched {
-    border: solid 2px tomato;
+    border: solid 2px #dc3545;
 }
 
 select.ng-invalid.ng-touched {
-    border: solid 2px tomato;
+    border: solid 2px #dc3545;
 }
 
 input.ng-valid {
@@ -15,8 +15,14 @@ select.ng-valid {
 }
 
 div {
-    color: tomato;
-} */
+    color: #dc3545;
+    font-size: 13px;
+}
+
+control-error {
+    width: 100%;
+    margin-top: 0.25rem;
+}
 
 .form-submitted input.ng-invalid,
 .form-submitted select.ng-invalid {

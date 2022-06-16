@@ -66,8 +66,8 @@
                         </p> -->
 
                         <p class="text-center">
-                            <a [routerLink]="['/login']" routerLinkActive="router-link-active">
-                                <span><hr> Inicia Sesión</span>
+                            <a style="font-size: 15px;" [routerLink]="['/login']" routerLinkActive="router-link-active">
+                                <hr> Inicia Sesión
                             </a>
                         </p>
                     </div>
@@ -77,8 +77,11 @@
         </div>
     </div>
 
-    <ng-template let-error let-text="text" #emailError>
-        <div *ngIf="error">
+    <ng-template #emailError>
+        <div *ngIf="f['correo'].errors?.['required']">
+            Campo requerido
+        </div>
+        <div *ngIf="f['correo'].errors?.['pattern']">
             El email debe ser valido
         </div>
     </ng-template>

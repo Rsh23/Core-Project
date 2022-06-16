@@ -8,8 +8,8 @@ import Swal from 'sweetalert2';
 
 export class ErrorInterceptor implements HttpInterceptor {
     constructor(private router: Router){
-
     }
+    //Esto captura los errores HTTP
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(req).pipe(
             catchError((err) => {
