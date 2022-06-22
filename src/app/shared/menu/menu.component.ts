@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
+import { logOutResponse } from '../../modelos/logOut/logOutResponse.interface';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +15,7 @@ export class MenuComponent implements OnInit {
   rol3: boolean = false;
   activo: boolean = false;
 
-  constructor( private service: DataService ) {
+  constructor( private service: DataService, private router: Router ) {
     this.showOption();
    }
 

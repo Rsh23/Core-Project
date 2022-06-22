@@ -10,6 +10,7 @@ import { rolResponse } from '../modelos/rol/rolResponse.interface';
 import { orgResponse } from '../modelos/organizacion/orgResponse.interface';
 import { groupResponse } from '../modelos/chat/groupResponse.interface';
 import { statusResponse } from '../modelos/tickets/statusResponse.interface';
+import { logOutResponse } from '../modelos/logOut/logOutResponse.interface';
 
 
 @Injectable({
@@ -34,7 +35,10 @@ export class DataService {
       return this.http.post<ResponseI>(PathRest.POST_LOGIN, form)
   }
 
-
+  // Este es el metodo del logOut
+  logOut( from: {} ): Observable<logOutResponse>{
+    return this.http.put<logOutResponse>(PathRest.PUT_LOGOUT, from)
+  }
 
   // Esto sirve para obtener el rol (Cliente, ClienteSuper, etc)
   getRolPost(rol: []): Observable<rolResponse> {
@@ -156,8 +160,6 @@ export class DataService {
       return false;
     }
   }
-
-  logOut(): void{}
    
   
 }

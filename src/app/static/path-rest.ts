@@ -10,4 +10,7 @@ export class PathRest{
     static readonly POST_CHAT_LISTAR = '/carrma/chat/grupos';
     static readonly POST_STATUS_TICKET = '/carrma/util/combo/estados_tickets';
     static readonly POST_PRIORITY_TICKETS = '/carrma/util/combo/prioridad_tickets';
+
+    // METODOS PUT
+    static readonly PUT_LOGOUT = '/carrma/usuarios/logout';
 }
