@@ -11,6 +11,7 @@ import { orgResponse } from '../modelos/organizacion/orgResponse.interface';
 import { groupResponse } from '../modelos/chat/groupResponse.interface';
 import { statusResponse } from '../modelos/tickets/statusResponse.interface';
 import { logOutResponse } from '../modelos/logOut/logOutResponse.interface';
+import { priorityResponse } from '../modelos/tickets/priorityResponse.interface';
 
 
 @Injectable({
@@ -63,6 +64,10 @@ export class DataService {
     return localStorage.getItem('rol')
   }  // Esto saca el rol del local storage
 
+  getPriority( priority: {} ): Observable<priorityResponse>{
+    return this.http.post<priorityResponse>(PathRest.POST_PRIORITY_TICKETS, priority)
+  }
+
   haveAccess1(){  // Esto es para obtener acceso segun el rol que inicio sesion 
     let loggintoken = localStorage.getItem('rol');
     if ( loggintoken == '1') {
@@ -86,6 +91,7 @@ export class DataService {
       return false;
     }
   }
+
   haveAccess2(){  // Esto es para obtener acceso segun el rol que inicio sesion 
     let loggintoken = localStorage.getItem('rol');
     if ( loggintoken == '2') {
@@ -108,6 +114,7 @@ export class DataService {
       return false;
     }
   }
+
   haveAccess3(){  // Esto es para obtener acceso segun el rol que inicio sesion 
     let loggintoken = localStorage.getItem('rol');
     if ( loggintoken == '3') {

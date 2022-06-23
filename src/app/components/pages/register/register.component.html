@@ -35,13 +35,13 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Tipo de Usuario</label>
-                                <select class="form-select" aria-label="Default select example" formControlName="rol">
+                                <select class="form-select" formControlName="rol">
                                     <option *ngFor="let rol of roles" [value]="rol.id" > {{ rol.nombre }} </option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Organización</label>
-                                <select class="form-select" aria-label="Default select example" formControlName="id_organizacion">
+                                <select class="form-select" formControlName="id_organizacion">
                                     <option *ngFor="let org of organizacion" [value]="org.id"> {{ org.nombre }} </option>
                                 </select>
                             </div>

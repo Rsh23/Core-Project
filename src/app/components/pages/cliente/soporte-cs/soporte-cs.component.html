@@ -23,31 +23,8 @@
 
                 <div class="container-xxl flex-grow-1 container-p-y animated fadeIn fast">
                     <div class="row">
-                        <div class="col-md-6  mb-3" >
-                            <div class="card text-center">
-                            <!-- <div class="card-header">Featured</div> -->
-                            <div class="card-body">
-                                <h5 class="card-title">Crear un ticket</h5>
-                                <!-- <p class="card-text">With supporting text below as a natural.</p> -->
-                                <button type="button" class="btn btn-primary" (click)="openModal(crearTicket)"> Ver </button>
-                            </div>
-                            <!-- <div class="card-footer text-muted">2 days ago</div> -->
-                            </div>
-                        </div>                          
 
-                        <div class="col-md-6">
-                            <div class="card text-center">
-                                <!-- <div class="card-header">Featured</div> -->
-                                <div class="card-body">
-                                <h5 class="card-title">Actualizar Ticket</h5>
-                                <!-- <p class="card-text">With supporting text below as a natural.</p> -->
-                                <a href="javascript:void(0)" class="btn btn-primary" (click)="openModal(updateTicket)"> Ver </a>
-                                </div>
-                                <!-- <div class="card-footer text-muted">2 days ago</div> -->
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <div class="card text-center">
                                 <!-- <div class="card-header">Featured</div> -->
                                 <div class="card-body">
@@ -59,7 +36,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <div class="card text-center">
                                 <!-- <div class="card-header">Featured</div> -->
                                 <div class="card-body">
@@ -70,6 +47,31 @@
                                 <!-- <div class="card-footer text-muted">2 days ago</div> -->
                             </div>
                         </div>
+
+                        <div class="col-md-6  mb-3" *ngIf="rol2">
+                            <div class="card text-center">
+                            <!-- <div class="card-header">Featured</div> -->
+                            <div class="card-body">
+                                <h5 class="card-title">Crear un ticket</h5>
+                                <!-- <p class="card-text">With supporting text below as a natural.</p> -->
+                                <button type="button" class="btn btn-primary" (click)="openModal(crearTicket)"> Ver </button>
+                            </div>
+                            <!-- <div class="card-footer text-muted">2 days ago</div> -->
+                            </div>
+                        </div>                          
+
+                        <div class="col-md-6 mb-3">
+                            <div class="card text-center" *ngIf="rol2">
+                                <!-- <div class="card-header">Featured</div> -->
+                                <div class="card-body">
+                                <h5 class="card-title">Actualizar Ticket</h5>
+                                <!-- <p class="card-text">With supporting text below as a natural.</p> -->
+                                <a href="javascript:void(0)" class="btn btn-primary" (click)="openModal(updateTicket)"> Ver </a>
+                                </div>
+                                <!-- <div class="card-footer text-muted">2 days ago</div> -->
+                            </div>
+                        </div>
+
                     </div>    
                 </div>    
 
@@ -98,9 +100,19 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label" for="basic-default-name">Nombre</label>
+                    <label class="col-sm-2 col-form-label" for="basic-default-name">Prioridad</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="basic-default-name" placeholder="Ticket 1" />
+                        <select class="form-select">
+                            <option *ngFor="let prioridad of prioridades" [value]="prioridad.id"> {{ prioridad.nombre }} </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="basic-default-name">Estado</label>
+                    <div class="col-sm-10">
+                        <select class="form-select">
+                            <option *ngFor="let estado of estados" [value]="estado.id"> {{ estado.nombre }} </option>
+                        </select>
                     </div>
                 </div>
             </form>
