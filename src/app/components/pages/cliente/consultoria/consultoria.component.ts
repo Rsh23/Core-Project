@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-consultoria',
@@ -12,8 +13,12 @@ export class ConsultoriaComponent implements OnInit {
   rol2 = false;
   rol3 = false;
 
-  constructor( private service: DataService ) { 
+  constructor( private service: DataService, public modal: NgbModal ) { 
     this.showOption();
+  }
+
+  openModal(listarDes: any){
+    this.modal.open(listarDes, {centered: true});
   }
 
   showOption() {

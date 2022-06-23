@@ -101,7 +101,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Ver Desarrollos</h5>
                                 <!-- <p class="card-text">With supporting text below as a natural.</p> -->
-                                <a href="javascript:void(0)" class="btn btn-primary"> Ver </a>
+                                <a href="javascript:void(0)" class="btn btn-primary" (click)="openModal(listarDes)"> Ver </a>
                                 </div>
                                 <!-- <div class="card-footer text-muted">2 days ago</div> -->
                             </div>
@@ -113,7 +113,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Ver Configuración</h5>
                                 <!-- <p class="card-text">With supporting text below as a natural.</p> -->
-                                <a href="javascript:void(0)" class="btn btn-primary"> Ver </a>
+                                <a href="javascript:void(0)" class="btn btn-primary" (click)="openModal(listarConfig)"> Ver </a>
                                 </div>
                                 <!-- <div class="card-footer text-muted">2 days ago</div> -->
                             </div>
@@ -125,7 +125,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">Ver Documentación</h5>
                                 <!-- <p class="card-text">With supporting text below as a natural.</p> -->
-                                <a href="javascript:void(0)" class="btn btn-primary"> Ver </a>
+                                <a href="javascript:void(0)" class="btn btn-primary" (click)="openModal(listarDoc)"> Ver </a>
                                 </div>
                                 <!-- <div class="card-footer text-muted">2 days ago</div> -->
                             </div>
@@ -140,6 +140,57 @@
 
     </div>
 
+
+    <ng-template #listarDes let-modal>
+
+        <div class="modal-header">
+            <div class="container">
+                <h4 style="text-align: center;" class="modal-tittle">Desarrollos</h4>   
+            </div>
+            <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-primary" (click)="modal.close()">Guardar</button>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <ng-template #listarConfig let-modal>
+
+        <div class="modal-header">
+            <div class="container">
+                <h4 style="text-align: center;" class="modal-tittle">Configuracion</h4>   
+            </div>
+            <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-primary" (click)="modal.close()">Guardar</button>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <ng-template #listarDoc let-modal>
+
+        <div class="modal-header">
+            <div class="container">
+                <h4 style="text-align: center;" class="modal-tittle">Documentación</h4>   
+            </div>
+            <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-primary" (click)="modal.close()">Guardar</button>
+            </div>
+        </div>
+
+    </ng-template>
 
 
 </body>
