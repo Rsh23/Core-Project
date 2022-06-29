@@ -38,8 +38,15 @@ export class MenuComponent implements OnInit {
   }
 
   btnSwitch(){
-    document.body.classList.toggle('dark');
-    this.activo = !this.activo;
+    if( this.activo == false ){
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
+      this.activo = true;
+    }
+    else{
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+      this.activo = false;
+    }
   }
-  
 }
