@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PageRoutingModule } from './page-routing.module';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 //Roles
 import { ClienteComponent } from './cliente/cliente.component';
@@ -61,7 +62,8 @@ import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
     ClienteSupRoutingModule,
     HttpClientModule,
     SoporteRoutingModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatSlideToggleModule
   ],
   providers: [
     DataService,
