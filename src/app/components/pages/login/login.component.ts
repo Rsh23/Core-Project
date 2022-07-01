@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   constructor( private dataSvc: DataService, private router: Router, private formBuilder: FormBuilder  ) {
     
-   }
+  }
 
   errorStatus: boolean = false;
   errorMsg: any = "";

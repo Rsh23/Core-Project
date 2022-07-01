@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PageRoutingModule } from './page-routing.module';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ErrorTailorModule } from '@ngneat/error-tailor';
 
 //Roles
 import { ClienteComponent } from './cliente/cliente.component';
@@ -63,7 +65,19 @@ import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
     HttpClientModule,
     SoporteRoutingModule,
     NgxChartsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ReactiveFormsModule, 
+    FormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'Campo requerido',
+          minlength: ({ requiredLength, actualLength }) => 
+                      `Este campo requiere ${requiredLength} caracteres como minimo`,
+          invalidAddress: error => `Address isn't valid`
+        }
+      }
+    })
   ],
   providers: [
     DataService,

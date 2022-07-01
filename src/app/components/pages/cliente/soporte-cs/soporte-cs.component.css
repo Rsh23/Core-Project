@@ -1,0 +1,20 @@
+input.ng-invalid.ng-touched {
+    border: solid 2px #dc3545;
+}
+
+select.ng-invalid.ng-touched {
+    border: solid 2px #dc3545;
+}
+
+input.ng-valid {
+    border: solid 2px greenyellow;
+}
+
+select.ng-valid {
+    border: solid 2px greenyellow;
+}
+
+div {
+    color: #dc3545;
+    font-size: 13px;
+}

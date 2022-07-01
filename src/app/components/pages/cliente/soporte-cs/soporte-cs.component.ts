@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, RequiredValidator, Validators, FormGroup } from '@angular/forms';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../../../../services/data.service';
 import { priorityResponse } from '../../../../modelos/tickets/priorityResponse.interface';
 import { statusResponse } from '../../../../modelos/tickets/statusResponse.interface';
+import Swal from 'sweetalert2';
+import { Ticket } from 'src/app/modelos/tickets/createTicket.interface';
 
 @Component({
   selector: 'app-soporte-cs',
@@ -11,7 +14,13 @@ import { statusResponse } from '../../../../modelos/tickets/statusResponse.inter
 })
 export class SoporteCSComponent implements OnInit {
 
-  constructor( public modal: NgbModal, private data: DataService ) {
+  public ticketForm = this.formBuilder.group({
+    nombre: ['', Validators.required],
+    priority: ['', Validators.required],
+    status: ['', Validators.required]
+  });
+
+  constructor( public modal: NgbModal, private data: DataService, private formBuilder: FormBuilder ) {
     this.showOption();
     this.getPriority();
     this.getStatus();
@@ -22,6 +31,27 @@ export class SoporteCSComponent implements OnInit {
   rol3: boolean = false;
 
   ngOnInit(): void {
+  }
+
+  createTicket( ticket: Ticket ){
+    if( this.ticketForm.valid ){
+      this.modal.dismissAll();
+      Swal.fire({
+        title: 'Ticket creado con exito!',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      }) 
+      this.ticketForm.reset();
+    }
+    else{
+      this.modal.dismissAll();
+      Swal.fire({
+        title: 'Error!',
+        text: 'Complete todos los campos correctamente',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+    }
   }
 
   // Esto abre el modal
