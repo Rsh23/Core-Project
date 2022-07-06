@@ -35,6 +35,7 @@ import { ClienteSupRoutingModule } from './clientesup/cliente-sup-routing.module
 import { SoporteRoutingModule } from './soporte-r/soporte-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
+import { LiderSoporteComponent } from './lider-soporte/lider-soporte.component';
 //Directivas
 
 
@@ -56,6 +57,7 @@ import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
     TicketsComponent,
     MenuComponent,
     NavbarComponent,
+    LiderSoporteComponent,
   ],
   imports: [
     CommonModule,

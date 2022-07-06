@@ -23,7 +23,8 @@ import { ClientesupComponent } from './components/pages/clientesup/clientesup.co
 import { SoporteRComponent } from './components/pages/soporte-r/soporte-r.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component'; 
 import {  RolchildGuard } from './core/guards/rol/rolchild.guard';
-
+import { LiderSoporteComponent } from './components/pages/lider-soporte/lider-soporte.component';
+import { Rol4Guard } from './core/guards/rol/rol4.guard';
 
 
 
@@ -58,6 +59,11 @@ const app_routes: Routes = [
   {
     path: 'soporte',
     canActivate: [AuthGuard, RolGuard3],
+    loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
+  },
+  {
+    path: 'liderSupp',
+    canActivate: [AuthGuard, Rol4Guard],
     loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
   },
   {

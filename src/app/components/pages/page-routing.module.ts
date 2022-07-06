@@ -7,6 +7,8 @@ import { ClientesupComponent } from './clientesup/clientesup.component';
 import { RolGuard2 } from './../../core/guards/rol/rol2.guard';
 import { SoporteRComponent } from './soporte-r/soporte-r.component';
 import { RolGuard3 } from 'src/app/core/guards/rol/rol3.guard';
+import { LiderSoporteComponent } from './lider-soporte/lider-soporte.component';
+import { Rol4Guard } from '../../core/guards/rol/rol4.guard';
 
 
 
@@ -26,6 +28,11 @@ const app_routes: Routes = [
     path: 'soporte',
     component: SoporteRComponent,
     canActivate: [AuthGuard, RolGuard3]
+  },
+  {
+    path: 'liderSupp',
+    component: LiderSoporteComponent,
+    canActivate: [AuthGuard, Rol4Guard]
   }
        
 ];

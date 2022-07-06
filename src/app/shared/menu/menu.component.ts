@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { logOutResponse } from '../../modelos/logOut/logOutResponse.interface';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-menu',
@@ -57,11 +58,24 @@ export class MenuComponent implements OnInit {
       correo: sessionStorage.getItem('correo'),
       token: localStorage.getItem('token')
     }
-    this.service.logOut(data).subscribe( data => {
-      let dataResponse: logOutResponse = data;
-      localStorage.removeItem('token');
-      localStorage.removeItem('rol');
-      this.router.navigate(['login']);
-    } )
+
+    Swal.fire({
+      title: '¿Estas seguro de cerrar sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.service.logOut(data).subscribe( data => {
+          let dataResponse: logOutResponse = data;
+          localStorage.removeItem('token');
+          localStorage.removeItem('rol');
+          this.router.navigate(['login']);
+        } )
+      }
+    })
   }
 }

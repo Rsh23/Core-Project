@@ -65,6 +65,9 @@ export class LoginComponent implements OnInit {
           else if( localStorage.getItem("rol") == "3"){
             this.router.navigate(['soporte/home']);
           }
+          else if( localStorage.getItem("rol") == "4" ){
+            this.router.navigate(['liderSupp/home']);
+          }
         }
         else{
           console.log("Paso por el else");

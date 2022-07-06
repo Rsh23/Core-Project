@@ -139,6 +139,33 @@ export class DataService {
     }
   }
 
+  haveAccess4(){  // Esto es para obtener acceso segun el rol que inicio sesion 
+    let loggintoken = localStorage.getItem('rol');
+    if ( loggintoken == '4') {
+      return true;
+    }
+    else{
+
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
+      // alert("No tienes acesso!");
+      if (loggintoken == "1"){
+        this.router.navigate(['cliente']);   
+      }
+      else if( loggintoken == "2"){
+        this.router.navigate(['clientesup']);
+      }
+      else if( loggintoken == "3" ){
+        this.router.navigate(['soporte']);
+      }
+    return false;
+    }
+  }
+
   showOption(){
     if ( localStorage.getItem('rol') == '1' ) {
       return true;
