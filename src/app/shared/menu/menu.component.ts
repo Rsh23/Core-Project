@@ -51,4 +51,17 @@ export class MenuComponent implements OnInit {
       this.activo = false;
     }
   }
+
+  logOut(){
+    const data = {
+      correo: sessionStorage.getItem('correo'),
+      token: localStorage.getItem('token')
+    }
+    this.service.logOut(data).subscribe( data => {
+      let dataResponse: logOutResponse = data;
+      localStorage.removeItem('token');
+      localStorage.removeItem('rol');
+      this.router.navigate(['login']);
+    } )
+  }
 }
