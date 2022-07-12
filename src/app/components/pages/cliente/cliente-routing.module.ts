@@ -51,7 +51,7 @@ const app_routes: Routes = [
         // canActivate: [AuthGuard] 
       },
       { 
-        path: 'consultoria',
+        path: 'consultoriaM',
         component: ConsultoriaComponent,
         // canActivate: [AuthGuard]  
       },   

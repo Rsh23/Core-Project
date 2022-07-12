@@ -10,6 +10,8 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClientesupComponent } from './clientesup/clientesup.component';
 import { SoporteRComponent } from './soporte-r/soporte-r.component';
+import { LiderSoporteComponent } from './lider-soporte/lider-soporte.component';
+import { ConsultoriaRolComponent } from './consultoria/consultoria.component';
 //General
 import { BugsComponent } from './general/bugs/bugs.component';
 import { HomeComponent } from './general/home/home.component';
@@ -20,7 +22,6 @@ import { PerfilComponent  } from './general/perfil/perfil.component';
 import { MenuComponent } from '../../shared/menu/menu.component';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 //Clientes
-import { ConsultoriaComponent } from './cliente/consultoria/consultoria.component';
 import { SoporteCSComponent } from './cliente/soporte-cs/soporte-cs.component';
 import { VentasComponent } from './cliente/ventas/ventas.component';
 //Soporte
@@ -35,7 +36,10 @@ import { ClienteSupRoutingModule } from './clientesup/cliente-sup-routing.module
 import { SoporteRoutingModule } from './soporte-r/soporte-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
-import { LiderSoporteComponent } from './lider-soporte/lider-soporte.component';
+//Consultoria
+import { ConsultoriaComponent } from './cliente/consultoria/consultoria.component';
+//Lider Consultoria
+import { LiderConsultoriaComponent } from './lider-consultoria/lider-consultoria.component';
 //Directivas
 
 
@@ -45,11 +49,11 @@ import { LiderSoporteComponent } from './lider-soporte/lider-soporte.component';
     ClientesupComponent,
     SoporteRComponent,
     BugsComponent,
+    ConsultoriaComponent,
     HomeComponent,
     ChatComponent,
     NotificacionesComponent,
     PerfilComponent,
-    ConsultoriaComponent,
     SoporteCSComponent,
     VentasComponent,
     EscalamientoComponent,
@@ -58,6 +62,8 @@ import { LiderSoporteComponent } from './lider-soporte/lider-soporte.component';
     MenuComponent,
     NavbarComponent,
     LiderSoporteComponent,
+    ConsultoriaRolComponent,
+    LiderConsultoriaComponent
   ],
   imports: [
     CommonModule,

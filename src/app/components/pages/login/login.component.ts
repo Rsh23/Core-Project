@@ -5,6 +5,7 @@ import { LoginI } from '../../../modelos/login/login.interface';
 import { Router } from '@angular/router';
 import { ResponseI } from '../../../modelos/login/response.interface';
 import Swal from 'sweetalert2'
+import { local } from 'd3';
 
 
 
@@ -57,7 +58,7 @@ export class LoginComponent implements OnInit {
             localStorage.removeItem('email');
           }
           if (localStorage.getItem("rol") == "1") {
-            this.router.navigate(['cliente']) 
+            this.router.navigate(['cliente/home']) 
           }
           else if( localStorage.getItem("rol") == "2"){
             this.router.navigate(['clientesup/home']);
@@ -67,6 +68,12 @@ export class LoginComponent implements OnInit {
           }
           else if( localStorage.getItem("rol") == "4" ){
             this.router.navigate(['liderSupp/home']);
+          }
+          else if( localStorage.getItem("rol") == "5" ){
+            this.router.navigate(['consultoria/home']);
+          }
+          else if( localStorage.getItem("rol") == "6" ){
+            this.router.navigate(['liderCons/home']);
           }
         }
         else{

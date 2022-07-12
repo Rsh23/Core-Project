@@ -82,11 +82,20 @@ export class DataService {
       )
 
       // alert("No tienes acesso!");
-      if( loggintoken == "2" ){
+      if( loggintoken == "2"){
         this.router.navigate(['clientesup']);
       }
       else if( loggintoken == "3" ){
-        this.router.navigate(['soporte'])
+        this.router.navigate(['soporte']);
+      }
+      else if( loggintoken == "4" ){
+        this.router.navigate(['liderSupp'])
+      }
+      else if( loggintoken == "5" ){
+        this.router.navigate(['consultoria'])
+      }
+      else if( loggintoken == "6" ){
+        this.router.navigate(['liderCons'])
       }
       return false;
     }
@@ -110,6 +119,15 @@ export class DataService {
       }
       else if( loggintoken == "3" ){
         this.router.navigate(['soporte'])
+      }
+      else if( loggintoken == "4" ){
+        this.router.navigate(['liderSupp'])
+      }
+      else if( loggintoken == "5" ){
+        this.router.navigate(['consultoria'])
+      }
+      else if( loggintoken == "6" ){
+        this.router.navigate(['liderCons'])
       }
       return false;
     }
@@ -135,9 +153,19 @@ export class DataService {
       else if( loggintoken == "2"){
         this.router.navigate(['clientesup']);
       }
-    return false;
+      else if ( loggintoken == "4" ){
+        this.router.navigate([''])
+      }
+      else if( loggintoken == "5" ){
+        this.router.navigate(['consultoria'])
+      }
+      else if( loggintoken == "6" ){
+        this.router.navigate(['liderCons'])
+      }
+      return false;
     }
   }
+
 
   haveAccess4(){  // Esto es para obtener acceso segun el rol que inicio sesion 
     let loggintoken = localStorage.getItem('rol');
@@ -162,7 +190,154 @@ export class DataService {
       else if( loggintoken == "3" ){
         this.router.navigate(['soporte']);
       }
-    return false;
+      else if( loggintoken == "5" ){
+        this.router.navigate(['consultoria'])
+      }
+      else if( loggintoken == "6" ){
+        this.router.navigate(['liderCons'])
+      }
+      return false;
+    }
+  }
+
+  haveAccess5(){
+    let loggintoken = localStorage.getItem('rol');
+    if ( loggintoken == '5') {
+      return true;
+    }
+    else{
+
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
+      // alert("No tienes acesso!");
+      if (loggintoken == "1"){
+        this.router.navigate(['cliente']);   
+      }
+      else if( loggintoken == "2"){
+        this.router.navigate(['clientesup']);
+      }
+      else if( loggintoken == "3" ){
+        this.router.navigate(['soporte']);
+      }
+      else if( loggintoken == "4" ){
+        this.router.navigate(['liderSupp'])
+      }
+      else if( loggintoken == "6" ){
+        this.router.navigate(['liderCons'])
+      }
+      return false;
+    }
+  }
+
+  haveAccess6(){
+    let loggintoken = localStorage.getItem('rol');
+    if ( loggintoken == '6') {
+      return true;
+    }
+    else{
+
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
+      // alert("No tienes acesso!");
+      if (loggintoken == "1"){
+        this.router.navigate(['cliente']);   
+      }
+      else if( loggintoken == "2"){
+        this.router.navigate(['clientesup']);
+      }
+      else if( loggintoken == "3" ){
+        this.router.navigate(['soporte']);
+      }
+      else if( loggintoken == "4" ){
+        this.router.navigate(['liderSupp'])
+      }
+      else if( loggintoken == "5" ){
+        this.router.navigate(['consultoria'])
+      }
+      return false;
+    }
+  }
+
+  haveAccess7(){
+    let loggintoken = localStorage.getItem('rol');
+    if ( loggintoken == '7') {
+      return true;
+    }
+    else{
+
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
+      // alert("No tienes acesso!");
+      if (loggintoken == "1"){
+        this.router.navigate(['cliente']);   
+      }
+      else if( loggintoken == "2"){
+        this.router.navigate(['clientesup']);
+      }
+      else if( loggintoken == "3" ){
+        this.router.navigate(['soporte']);
+      }
+      else if( loggintoken == "4" ){
+        this.router.navigate(['liderSupp'])
+      }
+      else if( loggintoken == "5" ){
+        this.router.navigate(['consultoria'])
+      }
+      else if( loggintoken == "6" ){
+        this.router.navigate(['liderCons'])
+      }
+      return false;
+    }
+  }
+
+  haveAccess8(){
+    let loggintoken = localStorage.getItem('rol');
+    if ( loggintoken == '8') {
+      return true;
+    }
+    else{
+
+      Swal.fire(
+        'Error!',
+        'No tienes permisos de acceso',
+        'error'
+      )
+
+      // alert("No tienes acesso!");
+      if (loggintoken == "1"){
+        this.router.navigate(['cliente']);   
+      }
+      else if( loggintoken == "2"){
+        this.router.navigate(['clientesup']);
+      }
+      else if( loggintoken == "3" ){
+        this.router.navigate(['soporte']);
+      }
+      else if( loggintoken == "4" ){
+        this.router.navigate(['liderSupp'])
+      }
+      else if( loggintoken == "5" ){
+        this.router.navigate(['consultoria'])
+      }
+      else if( loggintoken == "6" ){
+        this.router.navigate(['liderCons'])
+      }
+      else if( loggintoken == "7" ){
+        this.router.navigate(['gerencia'])
+      }
+      return false;
     }
   }
 

@@ -127,14 +127,14 @@
                             <div data-i18n="Analytics">Ventas</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a [routerLink]="['soporte-cs']" class="menu-link" *ngIf="rol1 || rol2">
+                    <li class="menu-item" *ngIf="rol1 || rol2">
+                        <a [routerLink]="['soporte-cs']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-support"></i>
                             <div data-i18n="Analytics">Soporte</div>
                         </a>
                     </li>
                     <li class="menu-item" *ngIf="rol1 || rol2">
-                        <a [routerLink]="['consultoria']" class="menu-link">
+                        <a [routerLink]="['consultoriaM']" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-notepad"></i>
                             <div data-i18n="Analytics">Consultoria</div>
                         </a>
