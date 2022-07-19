@@ -6,7 +6,7 @@ import { NotificacionesComponent } from '../general/notificaciones/notificacione
 import { ConsultoriaComponent } from '../cliente/consultoria/consultoria.component';
 import { HomeComponent } from '../general/home/home.component';
 import { ChatComponent } from '../general/chat/chat.component';
-import { VentasComponent } from '../cliente/ventas/ventas.component';
+import { VentasComponent } from './ventas/ventas.component';
 import { SoporteCSComponent } from '../cliente/soporte-cs/soporte-cs.component';
 import { AuthGuard } from '../../../core/guards/auth.guard';
 import { RolGuard } from '../../../core/guards/rol/rol.guard'
@@ -43,32 +43,32 @@ const app_routes: Routes = [
       { 
         path: 'bugs', 
         component: BugsComponent,
-        // canActivate: [AuthGuard] 
+        canActivate: [AuthGuard] 
       },
       { 
         path: 'notificaciones',
         component: NotificacionesComponent,
-        // canActivate: [AuthGuard] 
+        canActivate: [AuthGuard] 
       },
       { 
         path: 'consultoriaM',
         component: ConsultoriaComponent,
-        // canActivate: [AuthGuard]  
+        canActivate: [AuthGuard]  
       },   
       { 
-        path: 'ventas', 
+        path: 'ventasC', 
         component: VentasComponent,
-        // canActivate: [AuthGuard] 
+        canActivate: [AuthGuard] 
       },
       { 
         path: 'soporte-cs', 
         component: SoporteCSComponent ,
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
       },
       { 
         path: 'chat', 
         component: ChatComponent,
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
       },
       {
         path: '',

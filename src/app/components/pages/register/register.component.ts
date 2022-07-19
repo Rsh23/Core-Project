@@ -25,18 +25,6 @@ export class RegisterComponent implements OnInit {
   reactiveForm: FormGroup;
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  // registerForm = new FormGroup({
-  //   nombres : new FormControl('', [Validators.required, Validators.minLength(3)]),
-  //   correo : new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-  //   rol : new FormControl('', [Validators.required]),
-  //   id_organizacion : new FormControl('', [Validators.required]),
-  //   clave : new FormControl('', [Validators.required, Validators.minLength(8)]),
-  //   confClave : new FormControl('', [Validators.required, Validators.minLength(8)])
-  // },
-  // {
-  //   // validators : this.MustMatch()
-  // });
-
 
   constructor( private dataSvc: UserService, private router: Router, private data: DataService, private formBuilder: FormBuilder ) {
     this.reactiveForm = this.formBuilder.group({

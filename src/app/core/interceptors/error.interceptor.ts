@@ -13,7 +13,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(req).pipe(
             catchError((err) => {
-                console.log("interceptor")
+                console.log( err )
                 if( [500].indexOf(err.status) !== -1 ){
                     Swal.fire({
                         title: 'Error',
@@ -23,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                     })
                     // alert(err.error.body)
                 }
-                return throwError(err);
+                return throwError( () => err);
             })
         );
     }

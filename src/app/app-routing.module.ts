@@ -10,6 +10,8 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { Rol4Guard } from './core/guards/rol/rol4.guard';
 import { Rol5Guard } from './core/guards/rol/rol5.guard';
 import { Rol6Guard } from './core/guards/rol/rol6.guard';
+import { Rol7Guard } from './core/guards/rol/rol7.guard';
+import { Rol8Guard } from './core/guards/rol/rol8.guard'
 
 
 
@@ -58,6 +60,16 @@ const app_routes: Routes = [
   {
     path: 'liderCons',
     canActivate: [AuthGuard, Rol6Guard],
+    loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
+  },
+  {
+    path: 'gerencia',
+    canActivate: [AuthGuard, Rol7Guard],
+    loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
+  },
+  {
+    path: 'ventas',
+    canActivate: [AuthGuard, Rol8Guard],
     loadChildren: () => import('./components/pages/page.module').then((m) => m.PageModule)
   },
   {

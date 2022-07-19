@@ -63,7 +63,8 @@ export class DataService {
   getRol(){
     return localStorage.getItem('rol')
   }  // Esto saca el rol del local storage
-
+  
+  // Esto saca la prioridad de los tickets
   getPriority( priority: {} ): Observable<priorityResponse>{
     return this.http.post<priorityResponse>(PathRest.POST_PRIORITY_TICKETS, priority)
   }
@@ -229,6 +230,12 @@ export class DataService {
       else if( loggintoken == "6" ){
         this.router.navigate(['liderCons'])
       }
+      else if( loggintoken == "7" ){
+        this.router.navigate(['gerencia'])
+      }
+      else if( loggintoken == "8" ){
+        this.router.navigate(['ventas'])
+      }
       return false;
     }
   }
@@ -261,6 +268,12 @@ export class DataService {
       }
       else if( loggintoken == "5" ){
         this.router.navigate(['consultoria'])
+      }
+      else if( loggintoken == "7" ){
+        this.router.navigate(['gerencia'])
+      }
+      else if( loggintoken == "8" ){
+        this.router.navigate(['ventas'])
       }
       return false;
     }
@@ -297,6 +310,9 @@ export class DataService {
       }
       else if( loggintoken == "6" ){
         this.router.navigate(['liderCons'])
+      }
+      else if( loggintoken == "8" ){
+        this.router.navigate(['ventas'])
       }
       return false;
     }
@@ -341,6 +357,7 @@ export class DataService {
     }
   }
 
+  // Esto es para mostrar las cosas cuando se retorne true
   showOption(){
     if ( localStorage.getItem('rol') == '1' ) {
       return true;

@@ -13,7 +13,10 @@ import { ConsultoriaComponent } from './cliente/consultoria/consultoria.componen
 import { Rol5Guard } from '../../core/guards/rol/rol5.guard';
 import { LiderConsultoriaComponent } from './lider-consultoria/lider-consultoria.component';
 import { Rol6Guard } from 'src/app/core/guards/rol/rol6.guard';
-
+import { GerenciaComponent } from './gerencia/gerencia.component';
+import { Rol7Guard } from 'src/app/core/guards/rol/rol7.guard'
+import { VentasRolComponent } from './ventas/ventas.component';
+import { Rol8Guard } from 'src/app/core/guards/rol/rol8.guard';
 
 
 const app_routes: Routes = [
@@ -44,9 +47,19 @@ const app_routes: Routes = [
     canActivate: [AuthGuard, Rol5Guard]
   },
   {
-    path: 'LiderCons',
+    path: 'liderCons',
     component: LiderConsultoriaComponent,
     canActivate: [AuthGuard, Rol6Guard]
+  },
+  {
+    path: 'gerencia',
+    component: GerenciaComponent,
+    canActivate: [AuthGuard, Rol7Guard]
+  },
+  {
+    path: 'ventas',
+    component: VentasRolComponent,
+    canActivate: [AuthGuard, Rol8Guard]
   }
        
 ];

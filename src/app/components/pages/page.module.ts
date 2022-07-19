@@ -23,9 +23,9 @@ import { MenuComponent } from '../../shared/menu/menu.component';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 //Clientes
 import { SoporteCSComponent } from './cliente/soporte-cs/soporte-cs.component';
-import { VentasComponent } from './cliente/ventas/ventas.component';
 //Soporte
 import { EscalamientoComponent } from './soporte-r/escalamiento/escalamiento.component';
+import { VentasComponent } from './cliente/ventas/ventas.component'
 import { SolicitudIComponent } from './soporte-r/solicitud-i/solicitud-i.component';
 import { TicketsComponent } from './soporte-r/tickets/tickets.component';
 import { ClienteRoutingModule } from './cliente/cliente-routing.module';
@@ -40,6 +40,10 @@ import { ErrorInterceptor } from 'src/app/core/interceptors/error.interceptor';
 import { ConsultoriaComponent } from './cliente/consultoria/consultoria.component';
 //Lider Consultoria
 import { LiderConsultoriaComponent } from './lider-consultoria/lider-consultoria.component';
+//Gerencia
+import { GerenciaComponent } from './gerencia/gerencia.component';
+//Ventas
+import { VentasRolComponent } from './ventas/ventas.component';
 //Directivas
 
 
@@ -55,7 +59,7 @@ import { LiderConsultoriaComponent } from './lider-consultoria/lider-consultoria
     NotificacionesComponent,
     PerfilComponent,
     SoporteCSComponent,
-    VentasComponent,
+    VentasRolComponent,
     EscalamientoComponent,
     SolicitudIComponent,
     TicketsComponent,
@@ -63,7 +67,9 @@ import { LiderConsultoriaComponent } from './lider-consultoria/lider-consultoria
     NavbarComponent,
     LiderSoporteComponent,
     ConsultoriaRolComponent,
-    LiderConsultoriaComponent
+    LiderConsultoriaComponent,
+    GerenciaComponent,
+    VentasComponent
   ],
   imports: [
     CommonModule,
